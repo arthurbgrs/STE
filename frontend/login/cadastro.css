@@ -1,0 +1,88 @@
+body{
+margin:0;
+font-family:Arial;
+background:#2e1461;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+}
+
+.container{
+width:1300px;
+
+}
+
+.card{
+display:flex;
+background:#eee;
+border-radius:6px;
+overflow:hidden;
+height: 500px;
+}
+
+.form-area{
+flex:1;
+padding:40px;
+}
+
+.form-area h1{
+color:#2e1461;
+margin-bottom:30px;
+
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input{
+padding:12px;
+border-radius:25px;
+border:1px solid #ccc;
+
+}
+
+button{
+margin:10px auto;
+padding:12px;
+border:none;
+background:#2e1461;
+color:white;
+font-size:16px;
+cursor:pointer;
+width: 400px;
+}
+
+.image-area{
+flex:1;
+background:#6f87a7;
+display:flex;
+justify-content:center;
+align-items:center;
+background-image: url('https://super.abril.com.br/wp-content/uploads/2019/03/reuniao.png?w=720&h=440&crop=1');
+background-size: cover;
+}
+
+.image-area img{
+width:70%;
+}
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1{
+font-family: "Arvo", serif;
+text-align: center;
+}
+
+.enviar{
+    color: white;
+    text-decoration: none;
+}

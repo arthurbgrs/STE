@@ -30,6 +30,7 @@ padding:40px;
 .form-area h1{
 color:#2e1461;
 margin-bottom:30px;
+
 }
 
 form{
@@ -46,7 +47,7 @@ border:1px solid #ccc;
 }
 
 button{
-margin:10px auto;
+margin: 0px auto;
 padding:12px;
 border:none;
 background:#2e1461;
@@ -74,4 +75,29 @@ width:70%;
   font-family: "Arvo", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+h1{
+font-family: "Arvo", serif;
+text-align: center;
+}
+
+#mensagem{    
+text-align: center;
+margin-top: -10px;
+}
+
+#mensagem-senha{
+    margin-top: -10px;
+}
+
+.texto{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.enviar{
+    color: white;
+    text-decoration: none;
 }

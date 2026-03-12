@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="cadastro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="form-area">
+          <h1>CADASTRO DE USUÁRIO</h1>
+
+          <form id="formCadastro">
+            <input
+              type="text"
+              id="nome"
+              placeholder="Digite seu nome"
+              required
+              class="arvo-regular"
+            />
+
+            <input type="email" id="email" placeholder="Email" required class="arvo-regular"/>
+
+            <input type="password" id="senha" placeholder="Senha" required class="arvo-regular" />
+
+            <input
+              type="password"
+              id="confirmarSenha"
+              placeholder="Confirmar senha"
+              required
+                class="arvo-regular"
+            />
+
+            <button type="submit" class="arvo-regular"><a href="login.html" class="enviar">Entrar</a></button>
+          </form>
+
+          <p id="mensagem"></p>
+        </div>
+
+        <div class="image-area">
+          <!-- <img src="img/equipe.png" /> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+  </body>
+</html>

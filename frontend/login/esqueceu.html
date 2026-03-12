@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="esqueceu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="form-area">
+          <h1>ESQUECEU A SENHA</h1>
+
+          <p class="texto" class="arvo-regular">Informe seu email para redefinir a senha.</p>
+          <form id="formCadastro">
+           
+            
+
+            <input type="email" id="email" placeholder="Digite seu email" required class="arvo-regular"/>
+
+            <input type="password" id="senha" placeholder="Digite sua nova senha" required class="arvo-regular" />
+
+            <input
+              type="password"
+              id="confirmarSenha"
+              placeholder="Confirme sua nova senha"
+              required
+                class="arvo-regular"
+            />
+
+            <button type="submit" class="arvo-regular"><a href="login.html" class="enviar">Enviar</a></button>
+          </form>
+
+          <p id="mensagem"></p>
+        </div>
+
+        <div class="image-area">
+          <!-- <img src="img/equipe.png" /> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+  </body>
+</html>

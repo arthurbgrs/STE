@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Painel</title>
+
+    <link rel="stylesheet" href="paginainicial.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topo">
+      <div class="logo"></div>
+
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#">FUNCIONÁRIOS</a>
+        <a href="#">TREINAMENTOS</a>
+      </nav>
+    </header>
+
+    <section class="boasvindas">
+      <h1>Olá, Henrique</h1>
+    </section>
+
+    <section class="container">
+      <div class="card-funcionario">
+        <h2>Funcionários ativos</h2>
+        <p>MEXER, BACK END</p>
+      </div>
+
+      <div class="card-objetivo">
+        <h2>Nosso objetivo</h2>
+        <p>
+          Oferecemos uma plataforma intuitiva para que as empresas
+          acompanhem o desenvolvimento de seus funcionários
+        </p>
+      </div>
+
+      <div class="card pequeno">
+        <h2>Ações rápidas</h2>
+
+        <button>Gerenciar funcionários</button>
+        <button>Cadastrar Funcionários</button>
+        <button>Editar Funcionário</button>
+        <button>Adicionar treinamento</button>
+      </div>
+
+      <div class="card grande">
+        <h2>Funcionários recentes</h2>
+        <ul class="lista">
+        </ul>
+      </div>
+    </section>
+
+    <footer>© Todos os direitos reservados</footer>
+
+    <!-- modal hidden by default -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="detalhes-modo">Detalhes do Funcionário</h2>
+        <p id="modal-nome"></p>
+        <p id="modal-cpf"></p>
+        <p id="modal-departamento"></p>
+        <p id="modal-cargo"></p>
+        <p id="modal-telefone"></p>
+        <p id="modal-email"></p>
+        <p id="modal-detalhes"></p>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
