@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Funcionário</title>
+<link rel="stylesheet" href="cadastarFuncionario.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo"></div>
+
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">FUNCIONÁRIOS</a>
+        <a href="#">TREINAMENTOS</a>
+    </nav>
+</header>
+
+<div class="container">
+
+<h2>CADASTRAR FUNCIONÁRIO</h2>
+
+<form>
+
+<label>Nome</label>
+<input type="text" placeholder="Primeiros socorros">
+
+<label>CPF</label>
+<input type="text">
+
+<label>Departamento</label>
+<input type="text" placeholder="Operador de máquinas">
+
+<label>Cargo</label>
+<input type="text">
+
+<label>Nº TELEFONE</label>
+<input type="text">
+
+<label>Email</label>
+<input type="email">
+
+<div class="linha">
+
+<div class="detalhes">
+<label>Detalhes</label>
+<textarea placeholder="Alguns detalhes sobre o treinamento"></textarea>
+</div>
+
+<div class="foto-area">
+<label>Foto</label>
+
+<input type="file" id="foto" accept="image/*">
+
+<div class="preview">
+<img id="preview-img" src="">
+</div>
+
+</div>
+
+</div>
+
+<div class="botoes">
+<button class="criar">Criar</button>
+<button class="cancelar" type="reset">Cancelar</button>
+</div>
+
+</form>
+
+</div>
+
+<footer>
+© Todos os direitos reservados
+</footer>
+
+
+<script>
+
+const inputFoto = document.getElementById("foto");
+const preview = document.getElementById("preview-img");
+
+inputFoto.addEventListener("change", function(){
+
+    const arquivo = this.files[0];
+
+    if(arquivo){
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function(){
+            preview.src = reader.result;
+        });
+
+        reader.readAsDataURL(arquivo);
+    }
+
+});

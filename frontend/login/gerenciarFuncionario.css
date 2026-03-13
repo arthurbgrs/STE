@@ -1,0 +1,144 @@
+body{
+margin:0;
+font-family:Arial;
+background:#ffffff;
+}
+
+
+/* HEADER */
+
+header{
+background:#2a0f63;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo img{
+width:70px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:15px;
+}
+
+
+/* CONTAINER */
+
+.container{
+background:#ffffff;
+width:90%;
+margin:0 auto;
+padding:30px;
+min-height:80vh;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+
+/* BUSCA */
+
+.busca{
+width:500px;
+margin:0 auto 40px auto;
+position:relative;
+}
+
+.busca input{
+width:100%;
+padding:12px 40px 12px 20px;
+border-radius:25px;
+border:1px solid #aaa;
+}
+
+.busca i{
+position:absolute;
+right:15px;
+top:12px;
+color:blue;
+}
+
+
+/* CARD FUNCIONÁRIO */
+
+.cards{
+display:flex;
+gap:30px;
+}
+
+.card{
+background:white;
+padding:15px;
+width:180px;
+border-radius:10px;
+box-shadow:0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.foto{
+text-align:center;
+margin-bottom:10px;
+}
+
+.foto img{
+width:80px;
+height:80px;
+border-radius:5px;
+}
+
+.card p{
+font-size:13px;
+margin:5px 0;
+}
+
+.acoes{
+margin-top:10px;
+display:flex;
+gap:5px;
+}
+
+.acoes button{
+border:none;
+background:black;
+color:white;
+font-size:11px;
+padding:5px 8px;
+border-radius:10px;
+cursor:pointer;
+}
+
+
+/* BOTÃO CADASTRAR */
+
+.cadastrar{
+display:flex;
+justify-content:flex-end;
+margin-top:200px;
+}
+
+.cadastrar button{
+background:linear-gradient(90deg,#4a00ff,#4a00ff);
+border:none;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#2a0f63;
+color:white;
+text-align:center;
+padding:20px;
+margin-top: 25px;
+}

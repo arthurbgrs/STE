@@ -1,0 +1,96 @@
+body{
+    margin:0;
+    font-family: Arial;
+    background:#ffffff;
+}
+
+/* HEADER */
+
+header{
+    background:#2a0f63;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 40px;
+}
+
+.logo img{
+    width:60px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:800px;
+    background:#ffffff;
+    margin: auto;
+    padding:100px;
+    border-radius:4px;
+  
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:18px;
+    font-weight:normal;
+}
+
+/* FORM */
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #bbb;
+    margin-top:5px
+}
+
+/* BOTÕES */
+
+.botoes{
+    margin-top:40px;
+}
+
+.salvar{
+    background:linear-gradient(90deg,#4a00ff,#4a00ff);
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.limpar{
+    background:#777;
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:6px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    background:#2a0f63;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:400px;
+}
