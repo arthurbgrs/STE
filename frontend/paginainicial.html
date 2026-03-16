@@ -42,13 +42,13 @@
         </p>
       </div>
 
-      <div class="card pequeno">
+      <div class="card-acoes">
         <h2>Ações rápidas</h2>
 
-        <button>Gerenciar funcionários</button>
-        <button>Cadastrar Funcionários</button>
-        <button>Editar Funcionário</button>
-        <button>Adicionar treinamento</button>
+       <button class="botao">👥 Gerenciar funcionários</button>
+    <button class="botao">➕ Cadastrar Funcionários</button>
+    <button class="botao">✏️ Editar Funcionário</button>
+    <button class="botao">📚 Adicionar treinamento</button>
       </div>
 
       <div class="card grande">
@@ -58,20 +58,28 @@
       </div>
     </section>
 
-    <footer>© Todos os direitos reservados</footer>
+    <footer><p class="rodape">© Todos os direitos reservados</p></footer>
 
     <!-- modal hidden by default -->
     <div id="modal" class="modal hidden">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2 class="detalhes-modo">Detalhes do Funcionário</h2>
+        <div class="foto-modal"></div>
         <p id="modal-nome"></p>
+        <div class="info-grid">
         <p id="modal-cpf"></p>
         <p id="modal-departamento"></p>
         <p id="modal-cargo"></p>
         <p id="modal-telefone"></p>
         <p id="modal-email"></p>
         <p id="modal-detalhes"></p>
+        </div>
+        <div class="acoes-botao">
+        <button class="editar">Editar</button>
+        <button class="fechar">Fechar</button>
+    </div>
+
       </div>
     </div>
 

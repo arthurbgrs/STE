@@ -1,0 +1,175 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#efefef;
+}
+
+/* HEADER */
+
+header{
+background:#2d1163;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo{
+font-weight:bold;
+font-size:22px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-size:16px;
+}
+
+nav a:hover{
+opacity:0.7;
+}
+
+
+/* MAIN */
+
+main{
+width:900px;
+margin:50px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+font-weight:500;
+}
+
+
+/* FORM */
+
+.formulario{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.campo{
+display:flex;
+flex-direction:column;
+flex:1;
+}
+
+label{
+font-weight:bold;
+margin-bottom:5px;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:15px;
+}
+
+textarea{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+height:120px;
+resize:none;
+}
+
+.linha{
+display:flex;
+gap:20px;
+}
+
+
+/* FOTO */
+
+.foto input{
+margin-bottom:15px;
+align-items: center;
+}
+
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+background:#ddd;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.avatar img{
+width:100%;
+}
+
+
+/* BOTÕES */
+
+.botoes{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:20px;
+}
+
+.salvar{
+background:linear-gradient(90deg,#5b2ca0,#3b1766);
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+.salvar:hover{
+opacity:0.9;
+}
+
+.cancelar{
+background:#777;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+.cancelar:hover{
+opacity:0.9;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#2d1163;
+color:white;
+text-align:center;
+padding:55px;
+margin-top:48px;
+height: 100px;
+text-align: center;
+
+}
+
+.campo.foto{
+display:flex;
+align-items: center;
+}
