@@ -18,8 +18,8 @@
 
       <nav>
         <a href="#">HOME</a>
-        <a href="#">FUNCIONÁRIOS</a>
-        <a href="#">TREINAMENTOS</a>
+        <a href="/frontend/login/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
+        <a href="/frontend/login/adicionarTreinamento.html">TREINAMENTOS</a>
       </nav>
     </header>
 
@@ -31,30 +31,29 @@
     <section class="container">
       <div class="card-funcionario">
         <h2>Funcionários ativos</h2>
-        <p>MEXER, BACK END</p>
+        <p id="quantidade"></p>
       </div>
 
       <div class="card-objetivo">
         <h2>Nosso objetivo</h2>
         <p>
-          Oferecemos uma plataforma intuitiva para que as empresas
-          acompanhem o desenvolvimento de seus funcionários
+          Oferecemos uma plataforma intuitiva para que as empresas acompanhem o
+          desenvolvimento de seus funcionários
         </p>
       </div>
 
       <div class="card-acoes">
         <h2>Ações rápidas</h2>
 
-       <button class="botao">👥 Gerenciar funcionários</button>
-    <button class="botao">➕ Cadastrar Funcionários</button>
-    <button class="botao">✏️ Editar Funcionário</button>
-    <button class="botao">📚 Adicionar treinamento</button>
+<a class="botao" href="/frontend/login/gerenciarFuncionario.html">👥 Gerenciar funcionários</a>
+<a class="botao" href="/frontend/login/cadastrarFuncionario.html">➕ Cadastrar Funcionários</a>
+<a class="botao" href="/frontend/login/editar-f.html">✏️ Editar Funcionário</a>
+<a class="botao" href="/frontend/login/adicionarTreinamento.html">📚 Adicionar treinamento</a>
       </div>
 
       <div class="card grande">
         <h2>Funcionários recentes</h2>
-        <ul class="lista">
-        </ul>
+        <ul class="lista"></ul>
       </div>
     </section>
 
@@ -68,18 +67,17 @@
         <div class="foto-modal"></div>
         <p id="modal-nome"></p>
         <div class="info-grid">
-        <p id="modal-cpf"></p>
-        <p id="modal-departamento"></p>
-        <p id="modal-cargo"></p>
-        <p id="modal-telefone"></p>
-        <p id="modal-email"></p>
-        <p id="modal-detalhes"></p>
+          <p id="modal-cpf"></p>
+          <p id="modal-departamento"></p>
+          <p id="modal-cargo"></p>
+          <p id="modal-telefone"></p>
+          <p id="modal-email"></p>
+          <p id="modal-detalhes"></p>
         </div>
         <div class="acoes-botao">
-        <button class="editar">Editar</button>
-        <button class="fechar">Fechar</button>
-    </div>
-
+          <button class="editar">Editar</button>
+          <button class="fechar">Fechar</button>
+        </div>
       </div>
     </div>
 
