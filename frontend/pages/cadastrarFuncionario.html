@@ -22,31 +22,31 @@
 
 <h2>CADASTRAR FUNCIONÁRIO</h2>
 
-<form>
+<form id="formCadastrarFuncionario">
 
 <label>Nome</label>
-<input type="text" placeholder="Primeiros socorros">
+<input id="nome" type="text" placeholder="Primeiros socorros" required>
 
 <label>CPF</label>
-<input type="text">
+<input id="cpf" type="text" required>
 
 <label>Departamento</label>
-<input type="text" placeholder="Operador de máquinas">
+<input id="departamento" type="text" placeholder="Operador de máquinas" required>
 
 <label>Cargo</label>
-<input type="text">
+<input id="cargo" type="text" required>
 
 <label>Nº TELEFONE</label>
-<input type="text">
+<input id="telefone" type="text" required>
 
 <label>Email</label>
-<input type="email">
+<input id="email" type="email" required>
 
 <div class="linha">
 
 <div class="detalhes">
 <label>Detalhes</label>
-<textarea placeholder="Alguns detalhes sobre o treinamento"></textarea>
+<textarea id="detalhes" placeholder="Alguns detalhes sobre o treinamento"></textarea>
 </div>
 
 <div class="foto-area">
@@ -63,7 +63,7 @@
 </div>
 
 <div class="botoes">
-<button class="criar">Criar</button>
+<button type="submit" class="criar">Criar</button>
 <button class="cancelar" type="reset">Cancelar</button>
 </div>
 
@@ -96,3 +96,8 @@ inputFoto.addEventListener("change", function(){
     }
 
 });
+</script>
+
+<script src="../js/cadastrarFuncionario.js"></script>
+</body>
+</html>
