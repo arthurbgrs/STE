@@ -1,8 +1,8 @@
 document.getElementById('formCadastro').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const email = document.getElementById('email').value;
-  const senha = document.getElementById('senha').value;
+  const email = document.getElementById('email').value.trim().toLowerCase();
+  const senha = document.getElementById('senha').value.trim();
 
   try {
     const response = await fetch('http://localhost:3000/usuarios/login', {
