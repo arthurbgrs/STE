@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Cadastro</title>
 
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="../css/cadastro.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -14,23 +14,33 @@
     <div class="container">
       <div class="card">
         <div class="form-area">
-          <h1>LOGIN</h1>
+          <h1>CADASTRO DE USUÁRIO</h1>
 
           <form id="formCadastro">
-            
+            <input
+              type="text"
+              id="nome"
+              placeholder="Digite seu nome"
+              required
+              class="arvo-regular"
+            />
 
             <input type="email" id="email" placeholder="Email" required class="arvo-regular"/>
 
             <input type="password" id="senha" placeholder="Senha" required class="arvo-regular" />
-             <!-- adcionar  -->
-           <p id="mensagem-senha"><a href="esqueceu.html">Esqueceu a senha?</a></p>
 
-            <button type="submit" class="arvo-regular"><a href="/frontend/login/paginainicial.html" class="enviar">Entrar</a></button>
-            <button id="mensagem">Não possui conta? <a href="cadastro.html">Registre-se</a></button>
+            <input
+              type="password"
+              id="confirmarSenha"
+              placeholder="Confirmar senha"
+              required
+                class="arvo-regular"
+            />
 
+            <button type="submit" class="arvo-regular"><a href="login.html" class="enviar">Entrar</a></button>
           </form>
 
-    
+          <p id="mensagem"></p>
         </div>
 
         <div class="image-area">
