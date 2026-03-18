@@ -29,9 +29,21 @@ document.getElementById('formCadastrarFuncionario').addEventListener('submit', a
       body: formData,
     });
 
+    console.log('Resposta do servidor:', response.status, response.statusText);
+
     if (!response.ok) {
-      const error = await response.json();
-      alert(error.mensagem || 'Erro ao cadastrar funcionário');
+      const errorText = await response.text();
+      let errorData;
+      try {
+        errorData = JSON.parse(errorText);
+      } catch {
+        errorData = { mensagem: errorText };
+      }
+
+      const mensagem =
+        errorData.mensagem || errorData.sqlMessage || errorData.code || errorText;
+      console.error('Erro no cadastro (backend):', errorData);
+      alert(`Erro ao cadastrar funcionário: ${mensagem}`);
       return;
     }
 
