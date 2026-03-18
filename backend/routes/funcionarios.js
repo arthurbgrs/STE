@@ -1,6 +1,19 @@
 const express = require("express");
+const multer = require("multer");
+const path = require("path");
 const router = express.Router();
 const db = require("../db");
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => cb(null, path.join(__dirname, "..", "uploads")),
+    filename: (req, file, cb) => {
+      const unique = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
+      const ext = path.extname(file.originalname);
+      cb(null, `${unique}${ext}`);
+    },
+  }),
+});
 
 router.get("/", (req, res) => {
   db.query("SELECT * FROM funcionarios", (err, result) => {
@@ -18,21 +31,30 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  const { nome, cpf, departamento, cargo, telefone, email, detalhes } =
-    req.body;
+router.post("/", upload.single('foto'), (req, res) => {
+  console.log('Dados recebidos:', req.body);
+  console.log('Arquivo:', req.file);
+  const { nome, cpf, departamento, cargo, telefone, email, detalhes } = req.body;
+  const foto = req.file ? `/uploads/${req.file.filename}` : null;
+
+  if (!nome || !cpf || !departamento || !cargo || !telefone || !email) {
+    return res.status(400).json({ mensagem: "Todos os campos obrigatórios devem ser preenchidos" });
+  }
 
   const sql = `
         INSERT INTO funcionarios
-        (nome, cpf, departamento, cargo, telefone, email, detalhes)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        (nome, cpf, departamento, cargo, telefone, email, detalhes, foto)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
   db.query(
     sql,
-    [nome, cpf, departamento, cargo, telefone, email, detalhes],
+    [nome, cpf, departamento, cargo, telefone, email, detalhes, foto],
     (err, result) => {
-      if (err) return res.status(500).json(err);
+      if (err) {
+        console.error('Erro no banco:', err);
+        return res.status(500).json(err);
+      }
       res.json({ mensagem: "Funcionário criado" });
     },
   );
