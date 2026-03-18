@@ -14,7 +14,7 @@
     </div>
 
     <nav>
-           <a href="/frontend/pages/paginainicial.html">HOME</a>
+        <a href="/frontend/pages/paginainicial.html">HOME</a>
         <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
         <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
     </nav>
@@ -25,24 +25,31 @@
 
 <h2>ADICIONAR TREINAMENTO AO FUNCIONÁRIO</h2>
 
-<form>
+<form id="addTrainingForm">
 
-<label>Nome</label>
-<input type="text" value="Nelson Silva">
+<label for="funcionarioSelect">Funcionário</label>
+<select id="funcionarioSelect" required>
+  <option value="">Selecione um funcionário</option>
+</select>
 
-<label>Matrícula</label>
-<input type="text" value="1">
+<label for="treinamentoNome">Nome do treinamento</label>
+<input id="treinamentoNome" type="text" placeholder="Nome do treinamento" required>
 
-<label>Data de vencimento</label>
-<input type="date">
+<label for="categoria">Categoria</label>
+<input id="categoria" type="text" placeholder="Categoria (ex: Segurança, RH)" required>
 
-<label>Nome do treinamento</label>
-<input type="text" placeholder="Nome De Treino Importante">
+<label for="cargaHoraria">Carga horária (horas)</label>
+<input id="cargaHoraria" type="number" min="0" step="0.5" placeholder="Ex: 8" required>
 
+<label for="validade">Validade do treinamento</label>
+<input id="validade" type="date" required>
+
+<label for="detalhes">Detalhes (opcional)</label>
+<textarea id="detalhes" rows="3" placeholder="Observações sobre o treinamento"></textarea>
 
 <div class="botoes">
 
-<button class="salvar">
+<button type="submit" class="salvar">
 Salvar treinamento
 </button>
 
@@ -54,6 +61,8 @@ Limpar campos
 
 </form>
 
+<div id="message" role="status" aria-live="polite"></div>
+
 </div>
 
 
@@ -61,5 +70,6 @@ Limpar campos
 © Todos os direitos reservados
 </footer>
 
+<script src="../js/adicionarTreinamento.js"></script>
 </body>
 </html>

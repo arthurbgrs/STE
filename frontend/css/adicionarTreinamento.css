@@ -52,12 +52,19 @@ label{
     margin-top:10px;
 }
 
-input{
+input,
+select,
+textarea {
     width:100%;
     padding:10px;
     border-radius:10px;
     border:1px solid #bbb;
-    margin-top:5px
+    margin-top:5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
 }
 
 /* BOTÕES */
