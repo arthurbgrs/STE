@@ -18,40 +18,44 @@
     <main class="container">
       <div class="perfil">
         <img
+          id="fotoFuncionario"
           class="foto"
           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+          alt="Foto do funcionário"
         />
 
-        <h3>Nelson Silva</h3>
+        <h3 id="nomeFuncionario">Nome do funcionário</h3>
       </div>
 
       <div class="informacoes">
         <div class="lado-esquerdo">
-          <p>CPF: 122-777-777-77</p>
-          <p>📞 (27) 99999-9999</p>
-          <p>✉ Nelso@gmail.com</p>
+          <p id="cpfFuncionario">CPF: -</p>
+          <p id="telefoneFuncionario">📞 -</p>
+          <p id="emailFuncionario">✉ -</p>
         </div>
 
         <div class="linha"></div>
 
         <div class="lado-direito">
-          <p>Cargo: Gerente</p>
-          <p>Departamento: Operador de máquinas</p>
+          <p id="cargoFuncionario">Cargo: -</p>
+          <p id="departamentoFuncionario">Departamento: -</p>
         </div>
       </div>
 
       <section class="detalhes">
         <h2>Detalhes</h2>
-       <textarea class="textarea-custom"  name="" id=""></textarea>
+        <textarea class="textarea-custom" name="" id="detalhesFuncionario" readonly></textarea>
       </section>
 
       <div class="botoes">
-        <button class="editar">✏ Editar</button>
+        <button id="editarFuncionario" class="editar">✏ Editar</button>
 
-        <button class="excluir">🗑 Excluir</button>
+        <button id="excluirFuncionario" class="excluir">🗑 Excluir</button>
       </div>
     </main>
 
     <footer class="footer">© Todos os direitos reservados</footer>
+
+    <script src="../js/detalhes.js"></script>
   </body>
 </html>
