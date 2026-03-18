@@ -23,16 +23,16 @@
 
 <h1>EDITAR FUNCIONÁRIOS</h1>
 
-<form class="formulario">
+<form class="formulario" id="formEditarFuncionario">
 
 <div class="campo">
 <label>Nome</label>
-<input type="text" value="Nelson Silva">
+<input id="nome" type="text" value="" required>
 </div>
 
 <div class="campo">
 <label>Email</label>
-<input type="email" value="nelsolssilv@gmail.com">
+<input id="email" type="email" value="" required>
 </div>
 
 
@@ -40,12 +40,12 @@
 
 <div class="campo">
 <label>Departamento</label>
-<input type="text" value="Operador de máquinas">
+<input id="departamento" type="text" value="" required>
 </div>
 
 <div class="campo">
 <label>Cargo</label>
-<input type="text" value="Gerente">
+<input id="cargo" type="text" value="" required>
 </div>
 
 </div>
@@ -55,12 +55,12 @@
 
 <div class="campo">
 <label>CPF</label>
-<input type="text" value="177.878.555-22">
+<input id="cpf" type="text" value="" required>
 </div>
 
 <div class="campo">
 <label>Telefone</label>
-<input type="text">
+<input id="telefone" type="text" value="" required>
 </div>
 
 </div>
@@ -70,17 +70,17 @@
 
 <div class="campo">
 <label>Detalhes</label>
-<textarea>Alguns detalhes sobre funcionário</textarea>
+<textarea id="detalhes"> </textarea>
 </div>
 
 
 <div class="campo foto">
 <label>Foto</label>
 
-<input type="file">
+<input id="foto" type="file">
 
 <div class="avatar">
-<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+<img id="previewFoto" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 </div>
 
 </div>
@@ -90,8 +90,8 @@
 
 <div class="botoes">
 
-<button class="salvar">Salvar alterações</button>
-<button class="cancelar">Cancelar</button>
+<button type="submit" class="salvar">Salvar alterações</button>
+<button type="button" id="cancelarEditar" class="cancelar">Cancelar</button>
 
 </div>
 
@@ -105,4 +105,5 @@
 </footer>
 
 </body>
+<script src="../js/editarFuncionario.js"></script>
 </html>

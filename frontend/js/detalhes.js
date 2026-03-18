@@ -17,6 +17,7 @@ async function carregarDetalhes() {
     }
 
     const funcionario = await res.json();
+    console.log('Detalhes recebidos:', funcionario);
     preencherDados(funcionario);
   } catch (err) {
     console.error('Erro ao carregar detalhes:', err);
@@ -43,6 +44,15 @@ function preencherDados(funcionario) {
   cargoEl.textContent = `Cargo: ${funcionario.cargo || '—'}`;
   departamentoEl.textContent = `Departamento: ${funcionario.departamento || '—'}`;
   detalhesEl.value = funcionario.detalhes || '';
+
+  const btnEditar = document.getElementById('editarFuncionario');
+  if (btnEditar) {
+    btnEditar.addEventListener('click', () => {
+      const id = getQueryParam('id');
+      if (!id) return;
+      window.location.href = `editar-f.html?id=${id}`;
+    });
+  }
 }
 
 carregarDetalhes();

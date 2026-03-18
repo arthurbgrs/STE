@@ -109,15 +109,16 @@ gap:25px;
 margin-top:65px;
 }
 
-button{
+button{ 
 border:none;
 padding:10px 30px;
 border-radius:8px;
 font-size:16px;
 cursor:pointer;
+
 }
 
-.editar{
+.editar {
 background:#5a2cff;
 color:white;
 }

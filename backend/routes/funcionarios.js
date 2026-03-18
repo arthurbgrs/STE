@@ -18,7 +18,11 @@ const upload = multer({
 router.get("/", (req, res) => {
   db.query("SELECT * FROM funcionarios", (err, result) => {
     if (err) return res.status(500).json(err);
-    res.json(result);
+    const formatted = result.map((row) => ({
+      ...row,
+      foto: row.foto ? (row.foto.startsWith('/uploads/') ? row.foto : `/uploads/${row.foto}`) : null,
+    }));
+    res.json(formatted);
   });
 });
 
@@ -27,7 +31,15 @@ router.get("/:id", (req, res) => {
 
   db.query("SELECT * FROM funcionarios WHERE id = ?", [id], (err, result) => {
     if (err) return res.status(500).json(err);
-    res.json(result[0]);
+    if (!result[0]) return res.status(404).json({ mensagem: 'Funcionário não encontrado' });
+
+    const row = result[0];
+    const formatted = {
+      ...row,
+      foto: row.foto ? (row.foto.startsWith('/uploads/') ? row.foto : `/uploads/${row.foto}`) : null,
+    };
+
+    res.json(formatted);
   });
 });
 
@@ -60,24 +72,49 @@ router.post("/", upload.single('foto'), (req, res) => {
   );
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", upload.single('foto'), (req, res) => {
   const { id } = req.params;
-  const { nome, departamento, cargo, telefone, email, detalhes } = req.body;
+  const { nome, cpf, departamento, cargo, telefone, email, detalhes } = req.body;
+  const foto = req.file ? `/uploads/${req.file.filename}` : null;
+
+  console.log('PUT /funcionarios/' + id, { body: req.body, file: req.file });
+
+  if (!nome || !cpf || !departamento || !cargo || !telefone || !email) {
+    return res.status(400).json({ mensagem: "Todos os campos obrigatórios devem ser preenchidos" });
+  }
+
+  const fields = [
+    "nome = ?",
+    "cpf = ?",
+    "departamento = ?",
+    "cargo = ?",
+    "telefone = ?",
+    "email = ?",
+    "detalhes = ?",
+  ];
+
+  const values = [nome, cpf, departamento, cargo, telefone, email, detalhes];
+
+  if (foto) {
+    fields.push("foto = ?");
+    values.push(foto);
+  }
+
+  values.push(id);
 
   const sql = `
         UPDATE funcionarios
-        SET nome=?, departamento=?, cargo=?, telefone=?, email=?, detalhes=?
+        SET ${fields.join(", ")}
         WHERE id=?
     `;
 
-  db.query(
-    sql,
-    [nome, departamento, cargo, telefone, email, detalhes, id],
-    (err) => {
-      if (err) return res.status(500).json(err);
-      res.json({ mensagem: "Funcionário atualizado" });
-    },
-  );
+  db.query(sql, values, (err) => {
+    if (err) {
+      console.error('Erro no banco ao atualizar:', err);
+      return res.status(500).json({ mensagem: err.sqlMessage || err.message || 'Erro ao atualizar funcionário' });
+    }
+    res.json({ mensagem: "Funcionário atualizado" });
+  });
 });
 
 
