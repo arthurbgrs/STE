@@ -17,14 +17,17 @@ async function carregarFuncionarios() {
 function renderFuncionarios(funcionarios) {
   const container = document.getElementById('cardsContainer');
 
-  if (!funcionarios || funcionarios.length === 0) {
-    container.innerHTML = '<p>Nenhum funcionário cadastrado.</p>';
+  // Filtrar apenas funcionários ativos
+  const ativos = funcionarios.filter(funcionario => funcionario.ativo);
+
+  if (!ativos || ativos.length === 0) {
+    container.innerHTML = '<p>Nenhum funcionário ativo cadastrado.</p>';
     return;
   }
 
   container.innerHTML = '';
 
-  funcionarios.forEach((funcionario) => {
+  ativos.forEach((funcionario) => {
     const card = document.createElement('div');
     card.className = 'card';
 
@@ -70,5 +73,7 @@ function renderFuncionarios(funcionarios) {
     container.appendChild(card);
   });
 }
+  ;
+
 
 carregarFuncionarios();

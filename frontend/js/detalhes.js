@@ -53,6 +53,34 @@ function preencherDados(funcionario) {
       window.location.href = `editar-f.html?id=${id}`;
     });
   }
+  const btnExcluir = document.getElementById('excluirFuncionario');
+if (btnExcluir) {
+  btnExcluir.addEventListener('click', async () => {
+    const id = getQueryParam('id');
+    if (!id) return;
+
+    const confirmar = confirm('Tem certeza de que deseja excluir este funcionário? Esta ação não pode ser desfeita.');
+    if (!confirmar) return;
+
+    try {
+      const res = await fetch(`http://localhost:3000/funcionarios/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        alert(`Erro ao excluir funcionário (${res.status}): ${errorText}`);
+        return;
+      }
+
+      alert('Funcionário excluído com sucesso!');
+      window.location.href = 'gerenciarFuncionario.html';
+    } catch (err) {
+      console.error('Erro ao excluir funcionário:', err);
+      alert('Erro de comunicação ao excluir funcionário.');
+    }
+  });
+}
 }
 
 carregarDetalhes();
