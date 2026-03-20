@@ -26,7 +26,14 @@ async function carregarFuncionarios() {
       return;
     }
 
-    funcionarios.forEach((funcionario) => {
+    const funcionariosAtivos = funcionarios.filter(funcionario => funcionario.ativo);
+
+    if (!funcionariosAtivos || funcionariosAtivos.length === 0) {
+      select.innerHTML = '<option value="">Nenhum funcionário ativo disponível</option>';
+      return;
+    }
+
+    funcionariosAtivos.forEach((funcionario) => {
       const option = document.createElement("option");
       option.value = funcionario.id;
       option.textContent = `${funcionario.nome} (matrícula ${funcionario.id})`;

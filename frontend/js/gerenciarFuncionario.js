@@ -64,7 +64,7 @@ function renderFuncionarios(funcionarios) {
     btnTreino.className = 'treino';
     btnTreino.textContent = 'Treinamentos';
     btnTreino.addEventListener('click', () => {
-      alert('Funcionalidade de treinamentos ainda não implementada.');
+      window.location.href = `atribuidosTreinamentos.html?id=${funcionario.id}`;
     });
 
     acoes.append(btnDetalhes, btnTreino);

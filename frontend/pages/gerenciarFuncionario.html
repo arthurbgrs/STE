@@ -1,65 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Gerenciar Funcionários</title>
-<link rel="stylesheet" href="../css/gerenciarFuncionario.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gerenciar Funcionários</title>
+    <link rel="stylesheet" href="../css/gerenciarFuncionario.css" />
 
-<!-- ícone de lupa -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- ícone de lupa -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-</head>
+  <body>
+    <header>
+      <div class="">
+        <img src="" />
+      </div>
 
-<body>
-
-<header>
-
-<div class="">
-<img src="">
-</div>
-
-<nav>
+      <nav>
         <a href="/frontend/pages/paginainicial.html">HOME</a>
         <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
         <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
-</nav>
+      </nav>
+    </header>
 
-</header>
+    <section class="container">
+      <h2>GERENCIAR FUNCIONÁRIOS</h2>
 
+      <div class="busca">
+        <input type="text" placeholder="Busque um funcionário" />
 
-<section class="container">
+        <i class="fa fa-search"></i>
+      </div>
 
-<h2>GERENCIAR FUNCIONÁRIOS</h2>
+      <div class="cards" id="cardsContainer">
+        <!-- Funcionários serão inseridos aqui -->
+      </div>
 
-<div class="busca">
+      <div class="cadastrar">
+        <a href="/frontend/pages/cadastrarFuncionario.html"
+          >Cadastrar funcionário</a
+        >
+      </div>
+    </section>
 
-<input type="text" placeholder="Busque um funcionário">
+    <footer>© Todos os direitos reservados</footer>
 
-<i class="fa fa-search"></i>
-
-</div>
-
-
-<div class="cards" id="cardsContainer">
-  <!-- Funcionários serão inseridos aqui -->
-</div>
-
-
-<div class="cadastrar">
-
-<a href="/frontend/pages/cadastrarFuncionario.html">Cadastrar funcionário</a>
-
-</div>
-
-</section>
-
-
-<footer>
-
-© Todos os direitos reservados
-
-</footer>
-
-<script src="../js/gerenciarFuncionario.js"></script>
-</body>
+    <script src="../js/gerenciarFuncionario.js"></script>
+  </body>
 </html>

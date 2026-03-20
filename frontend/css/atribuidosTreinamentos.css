@@ -1,0 +1,185 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#e5e5e5;
+}
+
+/* TOPO */
+
+.topo{
+background:#2b0f63;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.topo nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+
+/* CONTAINER */
+
+.container{
+background:white;
+width:900px;
+margin:40px auto;
+padding:40px;
+border-radius:6px;
+}
+
+
+/* TITULO */
+
+h1{
+text-align:center;
+margin-bottom:30px;
+}
+
+
+/* PERFIL */
+
+.perfil{
+text-align:center;
+margin-bottom:20px;
+}
+
+.foto{
+width:120px;
+height:120px;
+background:#ddd;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:50px;
+margin:auto;
+color:#888;
+}
+
+.perfil h2{
+margin-top:10px;
+}
+
+
+/* BUSCA */
+
+.busca{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:25px 0;
+}
+
+.busca input{
+width:350px;
+padding:10px 15px;
+border-radius:25px;
+border:1px solid #bbb;
+outline:none;
+}
+
+.busca i{
+margin-left:-35px;
+color:#3b00ff;
+cursor:pointer;
+}
+
+
+/* ADICIONAR */
+
+.add{
+text-align:right;
+margin-bottom:10px;
+font-weight:500;
+cursor:pointer;
+}
+
+
+/* TABELA */
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+thead{
+background:linear-gradient(90deg,#5a33ff,#7a3cff);
+color:white;
+}
+
+th{
+padding:12px;
+text-align:left;
+}
+
+td{
+padding:15px 10px;
+border-bottom:1px solid #ddd;
+}
+
+
+/* STATUS */
+
+.concluido{
+background:#36a936;
+color:white;
+padding:4px 12px;
+border-radius:20px;
+font-size:14px;
+}
+
+.pendente{
+background:#f2c94c;
+color:white;
+padding:4px 12px;
+border-radius:20px;
+font-size:14px;
+}
+
+.vencido{
+background:#e74c3c;
+color:white;
+padding:4px 12px;
+border-radius:20px;
+font-size:14px;
+}
+
+
+/* BOTAO VOLTAR */
+
+.voltar{
+margin-top:30px;
+background:#777;
+color:white;
+border:none;
+padding:10px 25px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#2b0f63;
+color:white;
+text-align:center;
+padding:15px;
+margin-top: 127px;
+}
