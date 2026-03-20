@@ -64,7 +64,7 @@ function renderFuncionarios(funcionarios) {
     btnTreino.className = 'treino';
     btnTreino.textContent = 'Treinamentos';
     btnTreino.addEventListener('click', () => {
-      window.location.href = `atribuidosTreinamentos.html?id=${funcionario.id}`;
+      window.location.href = `/frontend/pages/atribuidosTreinamentos.html?id=${funcionario.id}`;
     });
 
     acoes.append(btnDetalhes, btnTreino);

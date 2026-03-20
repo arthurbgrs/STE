@@ -38,6 +38,36 @@ router.post("/", (req, res) => {
     }
   );
 });
+router.get('/atribuidos', (req, res) => {
+    const funcionario_id = req.query.funcionario_id;
+
+    if (!funcionario_id) {
+        return res.status(400).json({ mensagem: 'O parâmetro funcionario_id é obrigatório' });
+    }
+
+    const sql = `
+        SELECT ft.id AS atribuido_id,
+               ft.data_vencimento,
+               t.id AS treinamento_id,
+               t.nome AS treinamento_nome,
+               t.categoria,
+               t.carga_horaria,
+               t.validade AS validade_treinamento,
+               t.detalhes AS detalhes_treinamento,
+               f.nome AS funcionario_nome
+        FROM funcionario_treinamentos ft
+        JOIN treinamentos t ON ft.treinamento_id = t.id
+        JOIN funcionarios f ON ft.funcionario_id = f.id
+        WHERE ft.funcionario_id = ?
+        ORDER BY ft.data_vencimento ASC
+    `;
+
+    db.query(sql, [funcionario_id], (err, result) => {
+        if (err) return res.status(500).json(err);
+        res.json(result);
+    });
+});
+
 router.post('/atribuir', (req, res) => {
 
     const { funcionario_id, treinamento_id, data_vencimento } = req.body;

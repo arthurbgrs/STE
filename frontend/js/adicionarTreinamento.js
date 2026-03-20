@@ -128,6 +128,9 @@ async function criarTreinamento(event) {
 
     showMessage("Treinamento criado e vinculado com sucesso!", "success");
     document.getElementById("addTrainingForm")?.reset();
+
+    // Redireciona para a página de treinamentos atribuídos do funcionário criado
+    window.location.href = `../pages/atribuidosTreinamentos.html?id=${funcionarioId}`;
   } catch (error) {
     console.error(error);
     showMessage(`Erro: ${error.message || error}`, "error");
