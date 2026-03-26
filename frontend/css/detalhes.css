@@ -7,6 +7,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f4f3f6;
   color: #25183f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -29,11 +32,12 @@ body {
 }
 
 .pagina {
-  min-height: calc(100vh - 112px);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 42px 24px 56px;
+  flex: 1;
+  width: 100%;
 }
 
 .voltar-lista {
@@ -209,6 +213,7 @@ body {
   text-align: center;
   padding: 16px;
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
 @media (max-width: 768px) {

@@ -7,6 +7,9 @@ font-family:Arial, Helvetica, sans-serif;
 
 body{
 background:#efefef;
+min-height:100vh;
+display:flex;
+flex-direction:column;
 }
 
 /* HEADER */
@@ -40,12 +43,13 @@ opacity:0.7;
 /* MAIN */
 
 main{
-width:900px;
+width:min(900px, calc(100% - 32px));
 margin:50px auto;
 background:white;
 padding:40px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+flex:1;
 }
 
 h1{
@@ -181,11 +185,8 @@ footer{
 background:#2d1163;
 color:white;
 text-align:center;
-padding:55px;
-margin-top:48px;
-height: 100px;
-text-align: center;
-
+padding:18px;
+margin-top:auto;
 }
 
 .campo.foto{

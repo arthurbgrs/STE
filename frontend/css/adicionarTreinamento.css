@@ -2,6 +2,9 @@ body{
     margin:0;
     font-family: Arial;
     background:#ffffff;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
 /* HEADER */
@@ -34,7 +37,7 @@ nav a{
     margin: auto;
     padding:100px;
     border-radius:4px;
-  
+    flex:1;
 }
 
 h2{
@@ -99,5 +102,5 @@ footer{
     color:white;
     text-align:center;
     padding:15px;
-    margin-top:400px;
+    margin-top:auto;
 }

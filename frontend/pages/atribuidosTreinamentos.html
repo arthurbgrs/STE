@@ -2,91 +2,81 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Treinamentos</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treinamentos Atribuídos</title>
 <link rel="stylesheet" href="../css/atribuidosTreinamentos.css">
-
-
 </head>
 
 <body>
 
 <header class="topo">
-
-
-
-<nav>
-<a href="/frontend/pages/paginainicial.html">HOME</a>
-<a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
-<a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
+<nav class="menu">
+<a href="/frontend/pages/paginainicial.html">Home</a>
+<a href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
+<a class="ativo" href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
 </nav>
-
 </header>
 
+<main class="pagina">
 
-<div class="container">
-
-<h1>TREINAMENTOS ATRIBUIDOS:</h1>
-
-
-<div class="perfil">
-
-<div class="foto">
+<section class="perfil-card">
+<div class="perfil-foto">
 <img id="funcionarioFoto" alt="Foto do funcionário">
-<i id="fotoPlaceholder" class="fa-solid fa-user"></i>
+<span id="fotoPlaceholder" class="foto-placeholder">F</span>
 </div>
 
-<h2 id="funcionarioNome">Funcionario</h2>
+<div class="perfil-info">
+<h1 id="funcionarioNome">Funcionário</h1>
+<p id="funcionarioDepartamento">Departamento</p>
 
+<div class="perfil-status">
+<div class="status-item status-ok">
+<span class="status-bolinha"></span>
+<span>Ativo</span>
 </div>
+<div class="status-item status-vencido">
+<span class="status-icone">!</span>
+<span><strong id="totalVencidos">0</strong> Vencidos</span>
+</div>
+<div class="status-item status-pendente">
+<span class="status-icone">!</span>
+<span><strong id="totalPendentes">0</strong> Pendentes</span>
+</div>
+</div>
+</div>
+</section>
 
+<section class="cabecalho-tabela">
+<h2>Treinamentos Atribuídos</h2>
 
 <div class="busca">
-
-<input id="searchInput" type="text" placeholder="Busque um treinamento">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
+<span class="busca-icone">⌕</span>
+<input id="searchInput" type="text" placeholder="Buscar treinamento...">
 </div>
+</section>
 
-
-<div class="add">
-
-<i class="fa-solid fa-plus"></i> Treinamento
-
-</div>
-
-
+<section class="tabela-card">
 <table>
-
 <thead>
-
 <tr>
 <th>Treinamento</th>
 <th>Status</th>
 <th>Vencimento</th>
 </tr>
-
 </thead>
 
-<tbody id="treinamentosBody">
-</tbody>
-
+<tbody id="treinamentosBody"></tbody>
 </table>
+</section>
 
-
-<button class="voltar">
-<i class="fa-solid fa-arrow-left"></i>
-Voltar
-</button>
-
-
+<div class="rodape-conteudo">
+<button class="voltar">Voltar</button>
+<p id="resumoTreinamentos" class="resumo-treinamentos">0 treinamentos</p>
 </div>
 
+</main>
 
-<footer>
-© Todos os direitos reservados
-</footer>
+<footer>© 2026 Todos os direitos reservados</footer>
 
 <script src="../js/atribuidosTreinamentos.js"></script>
 </body>
