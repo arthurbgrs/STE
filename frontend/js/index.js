@@ -46,7 +46,7 @@ function funcionarioEstaAtivo(funcionario) {
 
 function preencherDashboard(lista) {
   const ativos = lista.filter(funcionarioEstaAtivo);
-  const recentes = [...ativos].sort((a, b) => (b.id || 0) - (a.id || 0)).slice(0, 3);
+  const recentes = [...ativos].sort((a, b) => (b.id || 0) - (a.id || 0));
 
   if (quantidade) {
     quantidade.textContent = String(ativos.length);

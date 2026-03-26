@@ -199,6 +199,23 @@ a {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  max-height: 326px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.lista-recentes::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-recentes::-webkit-scrollbar-track {
+  background: #f1ecfb;
+  border-radius: 999px;
+}
+
+.lista-recentes::-webkit-scrollbar-thumb {
+  background: #c5b8df;
+  border-radius: 999px;
 }
 
 .funcionario {

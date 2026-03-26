@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Funcionário</title>
     <link rel="stylesheet" href="../css/detalhes.css" />
   </head>
@@ -9,51 +10,89 @@
   <body>
     <header class="header">
       <nav class="menu">
-                <a href="/frontend/pages/paginainicial.html">HOME</a>
+        <a href="/frontend/pages/paginainicial.html">HOME</a>
         <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
         <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
       </nav>
     </header>
 
-    <main class="container">
-      <div class="perfil">
-        <img
-          id="fotoFuncionario"
-          class="foto"
-          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-          alt="Foto do funcionário"
-        />
+    <main class="pagina">
+      <a class="voltar-lista" href="/frontend/pages/gerenciarFuncionario.html">‹ Voltar para lista</a>
 
-        <h3 id="nomeFuncionario">Nome do funcionário</h3>
-      </div>
+      <section class="card-detalhes">
+        <div class="topo-card"></div>
 
-      <div class="informacoes">
-        <div class="lado-esquerdo">
-          <p id="cpfFuncionario">CPF: -</p>
-          <p id="telefoneFuncionario">📞 -</p>
-          <p id="emailFuncionario">✉ -</p>
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <img
+              id="fotoFuncionario"
+              src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              alt="Foto do funcionário"
+            />
+            <span id="iniciaisFuncionario" class="iniciais-funcionario"></span>
+          </div>
         </div>
 
-        <div class="linha"></div>
-
-        <div class="lado-direito">
-          <p id="cargoFuncionario">Cargo: -</p>
-          <p id="departamentoFuncionario">Departamento: -</p>
+        <div class="cabecalho-perfil">
+          <h1 id="nomeFuncionario">Nome do funcionário</h1>
+          <p id="cargoResumo">Cargo do funcionário</p>
         </div>
-      </div>
 
-      <section class="detalhes">
-        <h2>Detalhes</h2>
-        <textarea class="textarea-custom" name="" id="detalhesFuncionario" readonly></textarea>
+        <div class="informacoes">
+          <div class="info-item">
+            <span class="info-icone">◫</span>
+            <div>
+              <p class="info-label">CPF</p>
+              <p id="cpfFuncionario" class="info-valor">-</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icone">◔</span>
+            <div>
+              <p class="info-label">TELEFONE</p>
+              <p id="telefoneFuncionario" class="info-valor">-</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icone">✉</span>
+            <div>
+              <p class="info-label">E-MAIL</p>
+              <p id="emailFuncionario" class="info-valor">-</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icone">▣</span>
+            <div>
+              <p class="info-label">CARGO</p>
+              <p id="cargoFuncionario" class="info-valor">-</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icone">▥</span>
+            <div>
+              <p class="info-label">DEPARTAMENTO</p>
+              <p id="departamentoFuncionario" class="info-valor">-</p>
+            </div>
+          </div>
+        </div>
+
+        <section class="observacoes">
+          <h2>OBSERVAÇÕES</h2>
+          <textarea id="detalhesFuncionario" class="textarea-custom" readonly></textarea>
+        </section>
+
+        <div class="botoes">
+          <button id="editarFuncionario" class="editar">Editar</button>
+          <button id="excluirFuncionario" class="excluir">Excluir</button>
+        </div>
       </section>
-
-      <div class="botoes">
-        <button id="editarFuncionario" class="editar">✏ Editar</button>
-        <button id="excluirFuncionario" class="excluir">🗑 Excluir</button>
-      </div>
     </main>
 
-    <footer class="footer">© Todos os direitos reservados</footer>
+    <footer class="footer">© 2026 Todos os direitos reservados</footer>
 
     <script src="../js/detalhes.js"></script>
   </body>

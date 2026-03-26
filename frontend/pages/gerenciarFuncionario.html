@@ -2,10 +2,9 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciar Funcionários</title>
     <link rel="stylesheet" href="../css/gerenciarFuncionario.css" />
-
-    <!-- ícone de lupa -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -13,37 +12,35 @@
   </head>
 
   <body>
-    <header>
-      <div class="">
-        <img src="" />
-      </div>
+    <header class="topo">
+      <a class="logo" href="/frontend/pages/paginainicial.html">RH System</a>
 
-      <nav>
-        <a href="/frontend/pages/paginainicial.html">HOME</a>
-        <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
-        <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
+      <nav class="menu">
+        <a href="/frontend/pages/paginainicial.html">Home</a>
+        <a class="ativo" href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
+        <a href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
       </nav>
     </header>
 
-    <section class="container">
-      <h2>GERENCIAR FUNCIONÁRIOS</h2>
+    <main class="pagina">
+      <section class="cabecalho">
+        <h1>Gerenciar Funcionários</h1>
 
-      <div class="busca">
-        <input id="buscaFuncionario" type="text" placeholder="Busque um funcionário" />
+        <div class="busca">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="buscaFuncionario" type="text" placeholder="Busque um funcionário..." />
+        </div>
+      </section>
 
-        <i class="fa fa-search"></i>
-      </div>
-
-      <div class="cards" id="cardsContainer">
-        <!-- Funcionários serão inseridos aqui -->
-      </div>
+      <section class="cards" id="cardsContainer"></section>
 
       <div class="cadastrar">
-        <a href="/frontend/pages/cadastrarFuncionario.html"
-          >Cadastrar funcionário</a
-        >
+        <a href="/frontend/pages/cadastrarFuncionario.html">
+          <i class="fa-solid fa-plus"></i>
+          <span>Cadastrar funcionário</span>
+        </a>
       </div>
-    </section>
+    </main>
 
     <footer>© Todos os direitos reservados</footer>
 

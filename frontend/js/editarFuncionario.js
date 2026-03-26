@@ -5,11 +5,50 @@ function getQueryParam(name) {
   return params.get(name);
 }
 
+function setQueryParam(name, value) {
+  const url = new URL(window.location.href);
+
+  if (value) {
+    url.searchParams.set(name, value);
+  } else {
+    url.searchParams.delete(name);
+  }
+
+  window.history.replaceState({}, '', url);
+}
+
+async function carregarListaFuncionarios() {
+  const select = document.getElementById('selecionarFuncionario');
+  if (!select) return;
+
+  try {
+    const res = await fetch('http://localhost:3000/funcionarios');
+    if (!res.ok) throw new Error(`Falha ao carregar funcionários: ${res.status}`);
+
+    const funcionarios = await res.json();
+    const ativos = funcionarios.filter((funcionario) => funcionario.ativo !== 0 && funcionario.ativo !== false);
+    const selecionado = getQueryParam('id');
+
+    ativos
+      .sort((a, b) => (a.nome || '').localeCompare(b.nome || '', 'pt-BR'))
+      .forEach((funcionario) => {
+        const option = document.createElement('option');
+        option.value = funcionario.id;
+        option.textContent = `${funcionario.nome} (Matrícula ${funcionario.id})`;
+        if (String(funcionario.id) === String(selecionado)) {
+          option.selected = true;
+        }
+        select.appendChild(option);
+      });
+  } catch (error) {
+    console.error('Erro ao carregar lista de funcionários:', error);
+  }
+}
+
 async function carregarFuncionarioParaEditar() {
   const id = getQueryParam('id');
   console.log('editarFuncionario.js carregado, id=', id);
   if (!id) {
-    alert('ID do funcionário não informado');
     return;
   }
 
@@ -44,11 +83,30 @@ function preencherFormulario(funcionario) {
 
 function setupForm() {
   const form = document.getElementById('formEditarFuncionario');
+  const selectFuncionario = document.getElementById('selecionarFuncionario');
+
+  selectFuncionario?.addEventListener('change', async () => {
+    const idSelecionado = selectFuncionario.value;
+
+    if (!idSelecionado) {
+      setQueryParam('id', '');
+      form.reset();
+      document.getElementById('previewFoto').src = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
+      return;
+    }
+
+    setQueryParam('id', idSelecionado);
+    await carregarFuncionarioParaEditar();
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const id = getQueryParam('id');
-    if (!id) return;
+    if (!id) {
+      alert('Selecione um funcionário para editar.');
+      return;
+    }
 
     const formData = new FormData();
     formData.append('nome', document.getElementById('nome').value);
@@ -107,5 +165,5 @@ function setupForm() {
   });
 }
 
-carregarFuncionarioParaEditar();
+carregarListaFuncionarios().then(carregarFuncionarioParaEditar);
 setupForm();

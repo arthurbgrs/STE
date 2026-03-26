@@ -27,7 +27,9 @@ async function carregarDetalhes() {
 
 function preencherDados(funcionario) {
   const fotoEl = document.getElementById('fotoFuncionario');
+  const iniciaisEl = document.getElementById('iniciaisFuncionario');
   const nomeEl = document.getElementById('nomeFuncionario');
+  const cargoResumoEl = document.getElementById('cargoResumo');
   const cpfEl = document.getElementById('cpfFuncionario');
   const telefoneEl = document.getElementById('telefoneFuncionario');
   const emailEl = document.getElementById('emailFuncionario');
@@ -36,13 +38,30 @@ function preencherDados(funcionario) {
   const detalhesEl = document.getElementById('detalhesFuncionario');
 
   const fotoPath = funcionario.foto || '';
-  fotoEl.src = fotoPath.startsWith('/') ? `http://localhost:3000${fotoPath}` : (fotoPath || fotoEl.src);
+  if (fotoPath) {
+    fotoEl.src = fotoPath.startsWith('/') ? `http://localhost:3000${fotoPath}` : fotoPath;
+    fotoEl.style.display = 'block';
+    if (iniciaisEl) {
+      iniciaisEl.style.display = 'none';
+    }
+  } else if (iniciaisEl) {
+    fotoEl.style.display = 'none';
+    iniciaisEl.textContent = (funcionario.nome || 'F')
+      .trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((parte) => parte[0]?.toUpperCase() || '')
+      .join('');
+    iniciaisEl.style.display = 'flex';
+  }
+
   nomeEl.textContent = funcionario.nome || '—';
-  cpfEl.textContent = `CPF: ${funcionario.cpf || '—'}`;
-  telefoneEl.textContent = `📞 ${funcionario.telefone || '—'}`;
-  emailEl.textContent = `✉ ${funcionario.email || '—'}`;
-  cargoEl.textContent = `Cargo: ${funcionario.cargo || '—'}`;
-  departamentoEl.textContent = `Departamento: ${funcionario.departamento || '—'}`;
+  cargoResumoEl.textContent = funcionario.cargo || '—';
+  cpfEl.textContent = funcionario.cpf || '—';
+  telefoneEl.textContent = funcionario.telefone || '—';
+  emailEl.textContent = funcionario.email || '—';
+  cargoEl.textContent = funcionario.cargo || '—';
+  departamentoEl.textContent = funcionario.departamento || '—';
   detalhesEl.value = funcionario.detalhes || '';
 
   const btnEditar = document.getElementById('editarFuncionario');

@@ -7,13 +7,11 @@ function funcionarioEstaAtivo(funcionario) {
 }
 
 async function carregarFuncionarios() {
-  console.log('Carregando funcionários...');
   try {
     const res = await fetch('http://localhost:3000/funcionarios');
     if (!res.ok) throw new Error('Falha ao carregar funcionários');
 
     const funcionarios = await res.json();
-    console.log('Funcionários carregados:', funcionarios);
     funcionariosCarregados = funcionarios;
     atualizarLista();
   } catch (err) {
@@ -23,10 +21,9 @@ async function carregarFuncionarios() {
 }
 
 function renderFuncionarios(funcionarios) {
-  // Filtrar apenas funcionários ativos
   const ativos = funcionarios.filter(funcionarioEstaAtivo);
 
-  if (!ativos || ativos.length === 0) {
+  if (!ativos.length) {
     container.innerHTML = '<p>Nenhum funcionário ativo cadastrado.</p>';
     return;
   }
@@ -34,48 +31,56 @@ function renderFuncionarios(funcionarios) {
   container.innerHTML = '';
 
   ativos.forEach((funcionario) => {
-    const card = document.createElement('div');
+    const card = document.createElement('article');
     card.className = 'card';
 
     const foto = document.createElement('div');
     foto.className = 'foto';
 
-    const img = document.createElement('img');
     const fotoPath = funcionario.foto || '';
-    img.src = fotoPath.startsWith('/') ? `http://localhost:3000${fotoPath}` : (fotoPath || 'https://cdn-icons-png.flaticon.com/512/149/149071.png');
-    img.alt = funcionario.nome;
+    if (fotoPath) {
+      const img = document.createElement('img');
+      img.src = fotoPath.startsWith('/') ? `http://localhost:3000${fotoPath}` : fotoPath;
+      img.alt = funcionario.nome || 'Funcionário';
+      foto.appendChild(img);
+    } else {
+      const icone = document.createElement('i');
+      icone.className = 'fa-regular fa-user';
+      foto.appendChild(icone);
+    }
 
-    foto.appendChild(img);
+    const nome = document.createElement('h3');
+    nome.textContent = funcionario.nome || 'Funcionário';
 
-    const nomeP = document.createElement('p');
-    nomeP.innerHTML = `<b>Nome:</b> ${funcionario.nome}`;
+    const cargo = document.createElement('p');
+    cargo.className = 'cargo';
+    cargo.textContent = funcionario.cargo || '-';
 
-    const cargoP = document.createElement('p');
-    cargoP.innerHTML = `<b>Cargo:</b> ${funcionario.cargo || '-'}`;
-
-    const idP = document.createElement('p');
-    idP.innerHTML = `<b>Matrícula:</b> ${funcionario.id}`;
+    const matricula = document.createElement('p');
+    matricula.className = 'matricula';
+    matricula.textContent = `Matricula: ${funcionario.id}`;
 
     const acoes = document.createElement('div');
     acoes.className = 'acoes';
 
     const btnDetalhes = document.createElement('button');
+    btnDetalhes.type = 'button';
     btnDetalhes.className = 'detalhes';
-    btnDetalhes.textContent = 'Ver detalhes';
+    btnDetalhes.innerHTML = '<i class="fa-regular fa-eye"></i><span>Detalhes</span>';
     btnDetalhes.addEventListener('click', () => {
       window.location.href = `detalhes.html?id=${funcionario.id}`;
     });
 
     const btnTreino = document.createElement('button');
+    btnTreino.type = 'button';
     btnTreino.className = 'treino';
-    btnTreino.textContent = 'Treinamentos';
+    btnTreino.innerHTML = '<i class="fa-solid fa-graduation-cap"></i><span>Treinos</span>';
     btnTreino.addEventListener('click', () => {
       window.location.href = `/frontend/pages/atribuidosTreinamentos.html?id=${funcionario.id}`;
     });
 
     acoes.append(btnDetalhes, btnTreino);
-
-    card.append(foto, nomeP, cargoP, idP, acoes);
+    card.append(foto, nome, cargo, matricula, acoes);
     container.appendChild(card);
   });
 }
