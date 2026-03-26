@@ -54,7 +54,8 @@ router.get('/atribuidos', (req, res) => {
                t.carga_horaria,
                t.validade AS validade_treinamento,
                t.detalhes AS detalhes_treinamento,
-               f.nome AS funcionario_nome
+               f.nome AS funcionario_nome,
+               f.foto AS funcionario_foto
         FROM funcionario_treinamentos ft
         JOIN treinamentos t ON ft.treinamento_id = t.id
         JOIN funcionarios f ON ft.funcionario_id = f.id
@@ -64,7 +65,13 @@ router.get('/atribuidos', (req, res) => {
 
     db.query(sql, [funcionario_id], (err, result) => {
         if (err) return res.status(500).json(err);
-        res.json(result);
+        const formatted = result.map((row) => ({
+            ...row,
+            funcionario_foto: row.funcionario_foto
+                ? (row.funcionario_foto.startsWith('/uploads/') ? row.funcionario_foto : `/uploads/${row.funcionario_foto}`)
+                : null,
+        }));
+        res.json(formatted);
     });
 });
 

@@ -26,7 +26,9 @@ async function carregarFuncionarios() {
       return;
     }
 
-    const funcionariosAtivos = funcionarios.filter(funcionario => funcionario.ativo);
+    const funcionariosAtivos = funcionarios.filter(
+      (funcionario) => funcionario.ativo !== 0 && funcionario.ativo !== false
+    );
 
     if (!funcionariosAtivos || funcionariosAtivos.length === 0) {
       select.innerHTML = '<option value="">Nenhum funcionário ativo disponível</option>';

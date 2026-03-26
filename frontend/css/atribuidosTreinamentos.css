@@ -63,12 +63,20 @@ width:120px;
 height:120px;
 background:#ddd;
 border-radius:50%;
+overflow:hidden;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:50px;
 margin:auto;
 color:#888;
+}
+
+.foto img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
 }
 
 .perfil h2{

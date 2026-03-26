@@ -1,13 +1,60 @@
-document.getElementById('formCadastrarFuncionario').addEventListener('submit', async (e) => {
+const form = document.getElementById('formCadastrarFuncionario');
+const cpfInput = document.getElementById('cpf');
+const emailInput = document.getElementById('email');
+const telefoneInput = document.getElementById('telefone');
+const cancelarCadastroBtn = document.getElementById('cancelarCadastro');
+
+function formatarCpf(valor) {
+  const numeros = valor.replace(/\D/g, '').slice(0, 11);
+  const grupos = [];
+
+  if (numeros.length > 0) grupos.push(numeros.slice(0, 3));
+  if (numeros.length > 3) grupos.push(numeros.slice(3, 6));
+  if (numeros.length > 6) grupos.push(numeros.slice(6, 9));
+  if (numeros.length > 9) grupos.push(numeros.slice(9, 11));
+
+  return grupos.join('-');
+}
+
+function emailValido(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+cpfInput.addEventListener('input', () => {
+  cpfInput.value = formatarCpf(cpfInput.value);
+});
+
+telefoneInput.addEventListener('input', () => {
+  telefoneInput.value = telefoneInput.value.replace(/\D/g, '').slice(0, 11);
+});
+
+cancelarCadastroBtn?.addEventListener('click', () => {
+  window.location.href = 'gerenciarFuncionario.html';
+});
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const nome = document.getElementById('nome').value;
-  const cpf = document.getElementById('cpf').value;
+  const nome = document.getElementById('nome').value.trim();
+  const cpf = cpfInput.value;
+  const cpfNumeros = cpf.replace(/\D/g, '');
   const departamento = document.getElementById('departamento').value;
   const cargo = document.getElementById('cargo').value;
   const telefone = document.getElementById('telefone').value;
-  const email = document.getElementById('email').value;
+  const email = emailInput.value.trim().toLowerCase();
   const detalhes = document.getElementById('detalhes').value;
+
+  if (cpfNumeros.length !== 11) {
+    alert('O CPF deve conter 11 números.');
+    cpfInput.focus();
+    return;
+  }
+
+  if (!emailValido(email)) {
+    alert('Informe um e-mail válido.');
+    emailInput.focus();
+    return;
+  }
 
   try {
     const formData = new FormData();

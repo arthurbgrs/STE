@@ -1,3 +1,7 @@
+*{
+    box-sizing:border-box;
+}
+
 body{
     font-family: Arial;
     background:#ffffff;
@@ -46,13 +50,19 @@ label{
     font-weight:bold;
 }
 
-input, textarea{
+input, select, textarea{
     width:100%;
     padding:10px;
     margin-top:5px;
     margin-bottom:15px;
     border-radius:8px;
     border:1px solid #bbb;
+}
+
+select{
+    display:block;
+    min-height:42px;
+    background:#ffffff;
 }
 
 textarea{
@@ -74,16 +84,59 @@ textarea{
     width:200px;
 }
 
+#foto{
+    display:none;
+}
+
+.upload-foto{
+    border:1px solid #cfcfe6;
+    border-radius:12px;
+    padding:12px;
+    background:#f8f7ff;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.botao-foto{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:10px;
+    background:#2c0f64;
+    color:#ffffff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:background 0.2s ease;
+}
+
+.botao-foto:hover{
+    background:#401a87;
+}
+
+.nome-arquivo{
+    display:block;
+    font-size:14px;
+    color:#555;
+    text-align:center;
+    word-break:break-word;
+}
+
 .preview{
     width:150px;
     height:150px;
     border-radius:50%;
     overflow:hidden;
     background:#ddd;
-    margin-top:10px;
+    margin-top:8px;
     display:flex;
     align-items:center;
     justify-content:center;
+    border:3px solid #ece8ff;
 }
 
 .preview img{

@@ -1,3 +1,11 @@
+const container = document.getElementById('cardsContainer');
+const buscaInput = document.getElementById('buscaFuncionario');
+let funcionariosCarregados = [];
+
+function funcionarioEstaAtivo(funcionario) {
+  return funcionario.ativo !== 0 && funcionario.ativo !== false;
+}
+
 async function carregarFuncionarios() {
   console.log('Carregando funcionários...');
   try {
@@ -6,19 +14,17 @@ async function carregarFuncionarios() {
 
     const funcionarios = await res.json();
     console.log('Funcionários carregados:', funcionarios);
-    renderFuncionarios(funcionarios);
+    funcionariosCarregados = funcionarios;
+    atualizarLista();
   } catch (err) {
     console.error('Erro ao carregar funcionários:', err);
-    const container = document.getElementById('cardsContainer');
     container.innerHTML = '<p>Não foi possível carregar os funcionários.</p>';
   }
 }
 
 function renderFuncionarios(funcionarios) {
-  const container = document.getElementById('cardsContainer');
-
   // Filtrar apenas funcionários ativos
-  const ativos = funcionarios.filter(funcionario => funcionario.ativo);
+  const ativos = funcionarios.filter(funcionarioEstaAtivo);
 
   if (!ativos || ativos.length === 0) {
     container.innerHTML = '<p>Nenhum funcionário ativo cadastrado.</p>';
@@ -73,7 +79,32 @@ function renderFuncionarios(funcionarios) {
     container.appendChild(card);
   });
 }
-  ;
 
+function atualizarLista() {
+  const termo = (buscaInput?.value || '').trim().toLowerCase();
+
+  if (!termo) {
+    renderFuncionarios(funcionariosCarregados);
+    return;
+  }
+
+  const ordenados = [...funcionariosCarregados].sort((a, b) => {
+    const nomeA = (a.nome || '').toLowerCase();
+    const nomeB = (b.nome || '').toLowerCase();
+    const comecaA = nomeA.startsWith(termo);
+    const comecaB = nomeB.startsWith(termo);
+    const incluiA = nomeA.includes(termo);
+    const incluiB = nomeB.includes(termo);
+
+    if (comecaA !== comecaB) return comecaA ? -1 : 1;
+    if (incluiA !== incluiB) return incluiA ? -1 : 1;
+
+    return nomeA.localeCompare(nomeB, 'pt-BR');
+  });
+
+  renderFuncionarios(ordenados);
+}
+
+buscaInput?.addEventListener('input', atualizarLista);
 
 carregarFuncionarios();

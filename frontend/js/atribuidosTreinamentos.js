@@ -26,6 +26,8 @@ function getStatus(dataVencimento) {
 async function carregarTreinamentosAtribuidos() {
   const funcionarioId = getQueryParam('id');
   const nomeEl = document.getElementById('funcionarioNome');
+  const fotoEl = document.getElementById('funcionarioFoto');
+  const fotoPlaceholderEl = document.getElementById('fotoPlaceholder');
   const tbody = document.getElementById('treinamentosBody');
   const searchInput = document.getElementById('searchInput');
 
@@ -35,6 +37,30 @@ async function carregarTreinamentosAtribuidos() {
   }
 
   try {
+    try {
+      const funcionarioRes = await fetch(`http://localhost:3000/funcionarios/${funcionarioId}`);
+
+      if (funcionarioRes.ok) {
+        const funcionario = await funcionarioRes.json();
+        const nomeFuncionario = funcionario.nome || 'Funcionário';
+        const fotoFuncionario = funcionario.foto || '';
+
+        nomeEl.textContent = nomeFuncionario;
+
+        if (fotoFuncionario && fotoEl) {
+          fotoEl.src = fotoFuncionario.startsWith('/') ? `http://localhost:3000${fotoFuncionario}` : fotoFuncionario;
+          fotoEl.style.display = 'block';
+          if (fotoPlaceholderEl) fotoPlaceholderEl.style.display = 'none';
+        } else if (fotoEl) {
+          fotoEl.removeAttribute('src');
+          fotoEl.style.display = 'none';
+          if (fotoPlaceholderEl) fotoPlaceholderEl.style.display = 'block';
+        }
+      }
+    } catch (erroFuncionario) {
+      console.error('Erro ao carregar dados do funcionário:', erroFuncionario);
+    }
+
     const res = await fetch(`http://localhost:3000/treinamentos/atribuidos?funcionario_id=${funcionarioId}`);
     if (!res.ok) {
       throw new Error(`Erro ao buscar treinamentos: ${res.status}`);
@@ -48,7 +74,16 @@ async function carregarTreinamentosAtribuidos() {
     }
 
     const nomeFuncionario = dados[0].funcionario_nome || 'Funcionário';
-    nomeEl.textContent = nomeFuncionario;
+    const fotoFuncionario = dados[0].funcionario_foto || '';
+    if (!nomeEl.textContent || nomeEl.textContent === 'Funcionario') {
+      nomeEl.textContent = nomeFuncionario;
+    }
+
+    if ((!fotoEl?.src || fotoEl.src.endsWith('/')) && fotoFuncionario && fotoEl) {
+      fotoEl.src = fotoFuncionario.startsWith('/') ? `http://localhost:3000${fotoFuncionario}` : fotoFuncionario;
+      fotoEl.style.display = 'block';
+      if (fotoPlaceholderEl) fotoPlaceholderEl.style.display = 'none';
+    }
 
     function render(rows) {
       tbody.innerHTML = '';

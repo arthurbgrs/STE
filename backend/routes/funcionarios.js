@@ -55,13 +55,13 @@ router.post("/", upload.single('foto'), (req, res) => {
 
   const sql = `
         INSERT INTO funcionarios
-        (nome, cpf, departamento, cargo, telefone, email, detalhes, foto)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        (nome, cpf, departamento, cargo, telefone, email, detalhes, foto, ativo)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
   db.query(
     sql,
-    [nome, cpf, departamento, cargo, telefone, email, detalhes, foto],
+    [nome, cpf, departamento, cargo, telefone, email, detalhes, foto, 1],
     (err, result) => {
       if (err) {
         console.error('Erro no banco:', err);
