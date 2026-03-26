@@ -33,11 +33,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 42px 16px 56px;
+  padding: 42px 24px 56px;
 }
 
 .voltar-lista {
-  width: min(100%, 370px);
+  width: min(100%, 920px);
   color: #8b839a;
   text-decoration: none;
   font-size: 0.95rem;
@@ -45,7 +45,7 @@ body {
 }
 
 .card-detalhes {
-  width: min(100%, 382px);
+  width: min(100%, 920px);
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 18px 36px rgba(44, 22, 78, 0.14);
@@ -53,19 +53,19 @@ body {
 }
 
 .topo-card {
-  height: 64px;
+  height: 120px;
   background: linear-gradient(90deg, #3a1b68 0%, #6d57a2 100%);
 }
 
 .avatar-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: -38px;
+  margin-top: -54px;
 }
 
 .avatar {
-  width: 78px;
-  height: 78px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background: #f0f0f1;
   border: 3px solid #ffffff;
@@ -89,7 +89,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #2d1c4f;
   background: #f0f0f1;
@@ -97,25 +97,25 @@ body {
 
 .cabecalho-perfil {
   text-align: center;
-  padding: 12px 24px 6px;
+  padding: 18px 32px 12px;
 }
 
 .cabecalho-perfil h1 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 .cabecalho-perfil p {
   margin: 6px 0 0;
   color: #8a8099;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 .informacoes {
-  padding: 14px 18px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 20px 28px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .info-item {
@@ -155,18 +155,18 @@ body {
 }
 
 .observacoes {
-  padding: 18px;
+  padding: 24px 28px;
 }
 
 .observacoes h2 {
   margin: 0 0 10px;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: #777084;
 }
 
 .textarea-custom {
   width: 100%;
-  min-height: 96px;
+  min-height: 150px;
   border: none;
   border-radius: 12px;
   background: #faf9fc;
@@ -180,7 +180,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  padding: 0 18px 20px;
+  padding: 0 28px 28px;
 }
 
 .botoes button {
@@ -209,4 +209,52 @@ body {
   text-align: center;
   padding: 16px;
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .menu {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-detalhes,
+  .voltar-lista {
+    width: min(100%, 520px);
+  }
+
+  .topo-card {
+    height: 84px;
+  }
+
+  .avatar-wrapper {
+    margin-top: -44px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cabecalho-perfil h1 {
+    font-size: 1.5rem;
+  }
+
+  .informacoes {
+    grid-template-columns: 1fr;
+    padding: 18px 18px 0;
+  }
+
+  .observacoes {
+    padding: 20px 18px;
+  }
+
+  .botoes {
+    padding: 0 18px 22px;
+  }
 }
