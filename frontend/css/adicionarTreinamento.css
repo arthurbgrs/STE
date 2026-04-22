@@ -1,3 +1,9 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 body{
     margin:0;
     font-family: Arial;
@@ -5,16 +11,18 @@ body{
     min-height:100vh;
     display:flex;
     flex-direction:column;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* HEADER */
 
 header{
-    background:#2a0f63;
+    background: #4a2788;
     display:flex;
     align-items:center;
     justify-content:space-between;
     padding:15px 40px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo img{
@@ -98,7 +106,7 @@ textarea {
 /* FOOTER */
 
 footer{
-    background:#2a0f63;
+    background: #4a2788;
     color:white;
     text-align:center;
     padding:15px;
