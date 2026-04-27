@@ -57,6 +57,10 @@ cursor:pointer;
 width: 400px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .image-area{
 flex:1;
 background:#6f87a7;

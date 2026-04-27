@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Funcionário</title>
     <link rel="stylesheet" href="../css/detalhes.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
   </head>
 
   <body>
-    <header class="header">
+    <header class="topo">
+      <a class="logo" href="/frontend/pages/paginainicial.html">STE</a>
+
       <nav class="menu">
-        <a href="/frontend/pages/paginainicial.html">HOME</a>
-        <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
-        <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
+        <a href="/frontend/pages/paginainicial.html">Home</a>
+        <a class="ativo" href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
+        <a href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
       </nav>
+
+      <button id="logoutButton" class="logout-button" type="button">Sair</button>
     </header>
 
     <main class="pagina">
@@ -92,8 +98,9 @@
       </section>
     </main>
 
-    <footer class="footer">© 2026 Todos os direitos reservados</footer>
+    <footer class="site-footer">© 2026 Todos os direitos reservados</footer>
 
+    <script src="../js/header.js"></script>
     <script src="../js/detalhes.js"></script>
   </body>
 </html>

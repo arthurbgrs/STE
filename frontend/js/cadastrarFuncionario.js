@@ -1,6 +1,7 @@
 const form = document.getElementById('formCadastrarFuncionario');
 const cpfInput = document.getElementById('cpf');
 const emailInput = document.getElementById('email');
+const senhaInput = document.getElementById('senha');
 const telefoneInput = document.getElementById('telefone');
 const cancelarCadastroBtn = document.getElementById('cancelarCadastro');
 
@@ -42,6 +43,7 @@ form.addEventListener('submit', async (e) => {
   const cargo = document.getElementById('cargo').value;
   const telefone = document.getElementById('telefone').value;
   const email = emailInput.value.trim().toLowerCase();
+  const senha = senhaInput.value.trim();
   const detalhes = document.getElementById('detalhes').value;
 
   if (cpfNumeros.length !== 11) {
@@ -56,6 +58,12 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
+  if (senha.length < 4) {
+    alert('A senha deve ter pelo menos 4 caracteres.');
+    senhaInput.focus();
+    return;
+  }
+
   try {
     const formData = new FormData();
     formData.append('nome', nome);
@@ -64,6 +72,7 @@ form.addEventListener('submit', async (e) => {
     formData.append('cargo', cargo);
     formData.append('telefone', telefone);
     formData.append('email', email);
+    formData.append('senha', senha);
     formData.append('detalhes', detalhes);
 
     const fotoInput = document.getElementById('foto');
@@ -94,8 +103,9 @@ form.addEventListener('submit', async (e) => {
       return;
     }
 
+    const result = await response.json();
     alert('Funcionário cadastrado com sucesso!');
-    window.location.href = 'gerenciarFuncionario.html';
+    window.location.href = `detalhes.html?id=${result.id}`;
   } catch (error) {
     console.error('Erro ao cadastrar funcionário:', error);
     alert('Erro de comunicação com o servidor');

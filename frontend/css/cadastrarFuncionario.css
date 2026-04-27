@@ -176,13 +176,3 @@ textarea{
     border-radius:8px;
     font-size:16px;
 }
-
-/* FOOTER */
-
-footer{
-    background:#2c0f64;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:auto;
-}

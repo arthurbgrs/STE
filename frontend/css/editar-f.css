@@ -179,16 +179,6 @@ opacity:0.9;
 }
 
 
-/* FOOTER */
-
-footer{
-background:#2d1163;
-color:white;
-text-align:center;
-padding:18px;
-margin-top:auto;
-}
-
 .campo.foto{
 display:flex;
 align-items: center;

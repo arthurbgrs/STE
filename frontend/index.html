@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Cadastro</title>
 
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="css/login.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,14 +36,30 @@
               class="arvo-regular"
             />
             <!-- adcionar  -->
-            <p id="mensagem-senha">
-              <a href="esqueceu.html">Esqueceu a senha?</a>
+            <p id="passwordHelp">
+              <a href="pages/esqueceu.html">Esqueceu a senha?</a>
             </p>
 
             <button type="submit" class="arvo-regular enviar">Entrar</button>
-            <button id="mensagem">
-              Não possui conta? <a href="cadastro.html">Registre-se</a>
-            </button>
+            <p id="mensagem-senha">Cadastro de funcionários somente por administrador.</p>
+
+            <div id="passwordResetContainer" class="hidden">
+              <input
+                type="password"
+                id="novaSenha"
+                placeholder="Nova senha"
+                class="arvo-regular"
+              />
+              <input
+                type="password"
+                id="confirmarNovaSenha"
+                placeholder="Repita a nova senha"
+                class="arvo-regular"
+              />
+              <button id="mudarSenhaButton" type="button" class="arvo-regular enviar">
+                Alterar senha e entrar
+              </button>
+            </div>
           </form>
         </div>
 
@@ -53,6 +69,7 @@
       </div>
     </div>
 
-    <script src="../js/login.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>

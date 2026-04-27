@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciar Funcionários</title>
     <link rel="stylesheet" href="../css/gerenciarFuncionario.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -13,13 +15,15 @@
 
   <body>
     <header class="topo">
-      <a class="logo" href="/frontend/pages/paginainicial.html"></a>
+      <a class="logo" href="/frontend/pages/paginainicial.html">STE</a>
 
       <nav class="menu">
         <a href="/frontend/pages/paginainicial.html">Home</a>
         <a class="ativo" href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
         <a href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
       </nav>
+
+      <button id="logoutButton" class="logout-button" type="button">Sair</button>
     </header>
 
     <main class="pagina">
@@ -42,8 +46,10 @@
       </div>
     </main>
 
-    <footer>© Todos os direitos reservados</footer>
+    <footer class="site-footer">© 2026 Todos os direitos reservados</footer>
 
+    <script src="../js/authGuard.js"></script>
+    <script src="../js/header.js"></script>
     <script src="../js/gerenciarFuncionario.js"></script>
   </body>
 </html>

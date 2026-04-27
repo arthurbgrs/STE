@@ -1,183 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Cadastrar Funcionário</title>
-<link rel="stylesheet" href="../css/cadastrarFuncionario.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastrar Funcionário</title>
+    <link rel="stylesheet" href="../css/cadastrarFuncionario.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="topo">
+      <a class="logo" href="/frontend/pages/paginainicial.html">STE</a>
 
-<header>
-    <div class="logo"></div>
+      <nav class="menu">
+        <a href="/frontend/pages/paginainicial.html">Home</a>
+        <a class="ativo" href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
+        <a href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
+      </nav>
 
-    <nav>
-          <a href="/frontend/pages/paginainicial.html">HOME</a>
-        <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
-        <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
-    </nav>
-</header>
+      <button id="logoutButton" class="logout-button" type="button">Sair</button>
+    </header>
 
-<div class="container">
+    <div class="container">
+      <h2>CADASTRAR FUNCIONÁRIO</h2>
 
-<h2>CADASTRAR FUNCIONÁRIO</h2>
+      <form id="formCadastrarFuncionario">
+        <label>Nome</label>
+        <input id="nome" type="text" required />
 
-<form id="formCadastrarFuncionario">
+        <label>CPF</label>
+        <input
+          id="cpf"
+          type="text"
+          inputmode="numeric"
+          maxlength="14"
+          placeholder="123-456-789-01"
+          required
+        />
 
-<label>Nome</label>
-<input id="nome" type="text" required>
+        <label>Departamento</label>
+        <select id="departamento" required>
+          <option value="" selected disabled>Selecione um departamento</option>
+          <option value="Administração Geral">Administração Geral</option>
+          <option value="Planejamento Estratégico">Planejamento Estratégico</option>
+          <option value="Governança Corporativa">Governança Corporativa</option>
+          <option value="Recursos Humanos">Recursos Humanos</option>
+          <option value="Departamento Pessoal">Departamento Pessoal</option>
+          <option value="Treinamento e Desenvolvimento">Treinamento e Desenvolvimento</option>
+          <option value="Recrutamento e Seleção">Recrutamento e Seleção</option>
+          <option value="Cargos e Salários">Cargos e Salários</option>
+          <option value="Financeiro">Financeiro</option>
+          <option value="Contabilidade">Contabilidade</option>
+          <option value="Controladoria">Controladoria</option>
+          <option value="Tesouraria">Tesouraria</option>
+          <option value="Faturamento">Faturamento</option>
+          <option value="Cobrança">Cobrança</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Pós-vendas">Pós-vendas</option>
+          <option value="Atendimento ao Cliente">Atendimento ao Cliente</option>
+          <option value="E-commerce">E-commerce</option>
+          <option value="Produção">Produção</option>
+          <option value="Logística">Logística</option>
+          <option value="Suprimentos">Suprimentos</option>
+          <option value="Controle de Qualidade">Controle de Qualidade</option>
+          <option value="Manutenção">Manutenção</option>
+          <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+          <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+          <option value="Segurança da Informação">Segurança da Informação</option>
+          <option value="Jurídico">Jurídico</option>
+          <option value="Compliance">Compliance</option>
+          <option value="Comunicação Interna">Comunicação Interna</option>
+        </select>
 
-<label>CPF</label>
-<input
-id="cpf"
-type="text"
-inputmode="numeric"
-maxlength="14"
-placeholder="123-456-789-01"
-required
->
+        <label>Cargo</label>
+        <select id="cargo" required>
+          <option value="" selected disabled>Selecione um cargo</option>
+          <option value="Diretor Geral">Diretor Geral</option>
+          <option value="Gerente de Planejamento">Gerente de Planejamento</option>
+          <option value="Especialista em Governança">Especialista em Governança</option>
+          <option value="Gerente de RH">Gerente de RH</option>
+          <option value="Analista de DP">Analista de DP</option>
+          <option value="Analista de T&D">Analista de T&amp;D</option>
+          <option value="Recrutador">Recrutador</option>
+          <option value="Analista de Remuneração">Analista de Remuneração</option>
+          <option value="Gerente Financeiro">Gerente Financeiro</option>
+          <option value="Contador">Contador</option>
+          <option value="Controller">Controller</option>
+          <option value="Tesoureiro">Tesoureiro</option>
+          <option value="Analista de Faturamento">Analista de Faturamento</option>
+          <option value="Analista de Cobrança">Analista de Cobrança</option>
+          <option value="Gerente Comercial">Gerente Comercial</option>
+          <option value="Gerente de Marketing">Gerente de Marketing</option>
+          <option value="Analista de Pós-venda">Analista de Pós-venda</option>
+          <option value="Atendente">Atendente</option>
+          <option value="Gerente de E-commerce">Gerente de E-commerce</option>
+          <option value="Gerente de Produção">Gerente de Produção</option>
+          <option value="Gerente de Logística">Gerente de Logística</option>
+          <option value="Comprador">Comprador</option>
+          <option value="Analista de Qualidade">Analista de Qualidade</option>
+          <option value="Técnico de Manutenção">Técnico de Manutenção</option>
+          <option value="Gerente de TI">Gerente de TI</option>
+          <option value="Desenvolvedor">Desenvolvedor</option>
+          <option value="Analista de Segurança">Analista de Segurança</option>
+          <option value="Advogado">Advogado</option>
+          <option value="Analista de Compliance">Analista de Compliance</option>
+          <option value="Analista de Comunicação">Analista de Comunicação</option>
+        </select>
 
-<label>Departamento</label>
-<select id="departamento" required>
-<option value="" selected disabled>Selecione um departamento</option>
-<option value="Administração Geral">Administração Geral</option>
-<option value="Planejamento Estratégico">Planejamento Estratégico</option>
-<option value="Governança Corporativa">Governança Corporativa</option>
-<option value="Recursos Humanos">Recursos Humanos</option>
-<option value="Departamento Pessoal">Departamento Pessoal</option>
-<option value="Treinamento e Desenvolvimento">Treinamento e Desenvolvimento</option>
-<option value="Recrutamento e Seleção">Recrutamento e Seleção</option>
-<option value="Cargos e Salários">Cargos e Salários</option>
-<option value="Financeiro">Financeiro</option>
-<option value="Contabilidade">Contabilidade</option>
-<option value="Controladoria">Controladoria</option>
-<option value="Tesouraria">Tesouraria</option>
-<option value="Faturamento">Faturamento</option>
-<option value="Cobrança">Cobrança</option>
-<option value="Comercial">Comercial</option>
-<option value="Marketing">Marketing</option>
-<option value="Pós-vendas">Pós-vendas</option>
-<option value="Atendimento ao Cliente">Atendimento ao Cliente</option>
-<option value="E-commerce">E-commerce</option>
-<option value="Produção">Produção</option>
-<option value="Logística">Logística</option>
-<option value="Suprimentos">Suprimentos</option>
-<option value="Controle de Qualidade">Controle de Qualidade</option>
-<option value="Manutenção">Manutenção</option>
-<option value="Tecnologia da Informação">Tecnologia da Informação</option>
-<option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
-<option value="Segurança da Informação">Segurança da Informação</option>
-<option value="Jurídico">Jurídico</option>
-<option value="Compliance">Compliance</option>
-<option value="Comunicação Interna">Comunicação Interna</option>
-</select>
+        <label>Nº TELEFONE</label>
+        <input id="telefone" type="text" inputmode="numeric" maxlength="11" required />
 
-<label>Cargo</label>
-<select id="cargo" required>
-<option value="" selected disabled>Selecione um cargo</option>
-<option value="Diretor Geral">Diretor Geral</option>
-<option value="Gerente de Planejamento">Gerente de Planejamento</option>
-<option value="Especialista em Governança">Especialista em Governança</option>
-<option value="Gerente de RH">Gerente de RH</option>
-<option value="Analista de DP">Analista de DP</option>
-<option value="Analista de T&D">Analista de T&amp;D</option>
-<option value="Recrutador">Recrutador</option>
-<option value="Analista de Remuneração">Analista de Remuneração</option>
-<option value="Gerente Financeiro">Gerente Financeiro</option>
-<option value="Contador">Contador</option>
-<option value="Controller">Controller</option>
-<option value="Tesoureiro">Tesoureiro</option>
-<option value="Analista de Faturamento">Analista de Faturamento</option>
-<option value="Analista de Cobrança">Analista de Cobrança</option>
-<option value="Gerente Comercial">Gerente Comercial</option>
-<option value="Gerente de Marketing">Gerente de Marketing</option>
-<option value="Analista de Pós-venda">Analista de Pós-venda</option>
-<option value="Atendente">Atendente</option>
-<option value="Gerente de E-commerce">Gerente de E-commerce</option>
-<option value="Gerente de Produção">Gerente de Produção</option>
-<option value="Gerente de Logística">Gerente de Logística</option>
-<option value="Comprador">Comprador</option>
-<option value="Analista de Qualidade">Analista de Qualidade</option>
-<option value="Técnico de Manutenção">Técnico de Manutenção</option>
-<option value="Gerente de TI">Gerente de TI</option>
-<option value="Desenvolvedor">Desenvolvedor</option>
-<option value="Analista de Segurança">Analista de Segurança</option>
-<option value="Advogado">Advogado</option>
-<option value="Analista de Compliance">Analista de Compliance</option>
-<option value="Analista de Comunicação">Analista de Comunicação</option>
-</select>
+        <label>Email</label>
+        <input id="email" type="email" placeholder="nome@empresa.com" required />
 
-<label>Nº TELEFONE</label>
-<input id="telefone" type="text" inputmode="numeric" maxlength="11" required>
+        <label>Senha</label>
+        <input id="senha" type="password" placeholder="Digite a senha do funcionário" required />
 
-<label>Email</label>
-<input id="email" type="email" placeholder="nome@empresa.com" required>
+        <div class="linha">
+          <div class="detalhes">
+            <label>Detalhes</label>
+            <textarea id="detalhes" placeholder="Alguns detalhes sobre o funcionário"></textarea>
+          </div>
 
-<div class="linha">
+          <div class="foto-area">
+            <label>Foto</label>
 
-<div class="detalhes">
-<label>Detalhes</label>
-<textarea id="detalhes" placeholder="Alguns detalhes sobre o treinamento"></textarea>
-</div>
+            <div class="upload-foto">
+              <input type="file" id="foto" accept="image/*" />
+              <label for="foto" class="botao-foto">Escolher foto</label>
+              <span id="nome-arquivo" class="nome-arquivo">Nenhum arquivo escolhido</span>
+            </div>
 
-<div class="foto-area">
-<label>Foto</label>
+            <div class="preview">
+              <img id="preview-img" src="" />
+            </div>
+          </div>
+        </div>
 
-<div class="upload-foto">
-<input type="file" id="foto" accept="image/*">
-<label for="foto" class="botao-foto">Escolher foto</label>
-<span id="nome-arquivo" class="nome-arquivo">Nenhum arquivo escolhido</span>
-</div>
+        <div class="botoes">
+          <button type="submit" class="criar">Criar</button>
+          <button id="cancelarCadastro" class="cancelar" type="button">Cancelar</button>
+        </div>
+      </form>
+    </div>
 
-<div class="preview">
-<img id="preview-img" src="">
-</div>
+    <footer class="site-footer">© 2026 Todos os direitos reservados</footer>
 
-</div>
+    <script src="../js/authGuard.js"></script>
+    <script src="../js/header.js"></script>
+    <script>
+      const inputFoto = document.getElementById("foto");
+      const preview = document.getElementById("preview-img");
+      const nomeArquivo = document.getElementById("nome-arquivo");
 
-</div>
+      inputFoto.addEventListener("change", function () {
+        const arquivo = this.files[0];
 
-<div class="botoes">
-<button type="submit" class="criar">Criar</button>
-<button id="cancelarCadastro" class="cancelar" type="button">Cancelar</button>
-</div>
+        if (arquivo) {
+          nomeArquivo.textContent = arquivo.name;
+          const reader = new FileReader();
 
-</form>
-
-</div>
-
-<footer>
-© Todos os direitos reservados
-</footer>
-
-
-<script>
-
-const inputFoto = document.getElementById("foto");
-const preview = document.getElementById("preview-img");
-const nomeArquivo = document.getElementById("nome-arquivo");
-
-inputFoto.addEventListener("change", function(){
-
-    const arquivo = this.files[0];
-
-    if(arquivo){
-        nomeArquivo.textContent = arquivo.name;
-        const reader = new FileReader();
-
-        reader.addEventListener("load", function(){
+          reader.addEventListener("load", function () {
             preview.src = reader.result;
-        });
+          });
 
-        reader.readAsDataURL(arquivo);
-    } else {
-        nomeArquivo.textContent = "Nenhum arquivo escolhido";
-        preview.src = "";
-    }
+          reader.readAsDataURL(arquivo);
+        } else {
+          nomeArquivo.textContent = "Nenhum arquivo escolhido";
+          preview.src = "";
+        }
+      });
+    </script>
 
-});
-</script>
-
-<script src="../js/cadastrarFuncionario.js"></script>
-</body>
+    <script src="../js/cadastrarFuncionario.js"></script>
+  </body>
 </html>

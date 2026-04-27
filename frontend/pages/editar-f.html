@@ -1,116 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Editar Funcionário</title>
-<link rel="stylesheet" href="../css/editar-f.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editar Funcionário</title>
+    <link rel="stylesheet" href="../css/editar-f.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="topo">
+      <a class="logo" href="/frontend/pages/paginainicial.html">STE</a>
 
-<header>
-    <div class="logo"></div>
+      <nav class="menu">
+        <a href="/frontend/pages/paginainicial.html">Home</a>
+        <a class="ativo" href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
+        <a href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
+      </nav>
 
-    <nav>
-         <a href="/frontend/pages/paginainicial.html">HOME</a>
-        <a href="/frontend/pages/gerenciarFuncionario.html">FUNCIONÁRIOS</a>
-        <a href="/frontend/pages/adicionarTreinamento.html">TREINAMENTOS</a>
-    </nav>
-</header>
+      <button id="logoutButton" class="logout-button" type="button">Sair</button>
+    </header>
 
+    <main>
+      <h1>EDITAR FUNCIONÁRIOS</h1>
 
-<main>
+      <div class="seletor-funcionario">
+        <label for="selecionarFuncionario">Selecionar funcionário</label>
+        <select id="selecionarFuncionario">
+          <option value="">Escolha um funcionário para editar</option>
+        </select>
+      </div>
 
-<h1>EDITAR FUNCIONÁRIOS</h1>
+      <form class="formulario" id="formEditarFuncionario">
+        <div class="campo">
+          <label>Nome</label>
+          <input id="nome" type="text" value="" required />
+        </div>
 
-<div class="seletor-funcionario">
-<label for="selecionarFuncionario">Selecionar funcionário</label>
-<select id="selecionarFuncionario">
-<option value="">Escolha um funcionário para editar</option>
-</select>
-</div>
+        <div class="campo">
+          <label>Email</label>
+          <input id="email" type="email" value="" required />
+        </div>
 
-<form class="formulario" id="formEditarFuncionario">
+        <div class="linha">
+          <div class="campo">
+            <label>Departamento</label>
+            <input id="departamento" type="text" value="" required />
+          </div>
 
-<div class="campo">
-<label>Nome</label>
-<input id="nome" type="text" value="" required>
-</div>
+          <div class="campo">
+            <label>Cargo</label>
+            <input id="cargo" type="text" value="" required />
+          </div>
+        </div>
 
-<div class="campo">
-<label>Email</label>
-<input id="email" type="email" value="" required>
-</div>
+        <div class="linha">
+          <div class="campo">
+            <label>CPF</label>
+            <input id="cpf" type="text" value="" required />
+          </div>
 
+          <div class="campo">
+            <label>Telefone</label>
+            <input id="telefone" type="text" value="" required />
+          </div>
+        </div>
 
-<div class="linha">
+        <div class="linha">
+          <div class="campo">
+            <label>Detalhes</label>
+            <textarea id="detalhes"></textarea>
+          </div>
 
-<div class="campo">
-<label>Departamento</label>
-<input id="departamento" type="text" value="" required>
-</div>
+          <div class="campo foto">
+            <label>Foto</label>
 
-<div class="campo">
-<label>Cargo</label>
-<input id="cargo" type="text" value="" required>
-</div>
+            <input id="foto" type="file" />
 
-</div>
+            <div class="avatar">
+              <img id="previewFoto" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" />
+            </div>
+          </div>
+        </div>
 
+        <div class="botoes">
+          <button type="submit" class="salvar">Salvar alterações</button>
+          <button type="button" id="cancelarEditar" class="cancelar">Cancelar</button>
+        </div>
+      </form>
+    </main>
 
-<div class="linha">
+    <footer class="site-footer">© 2026 Todos os direitos reservados</footer>
 
-<div class="campo">
-<label>CPF</label>
-<input id="cpf" type="text" value="" required>
-</div>
-
-<div class="campo">
-<label>Telefone</label>
-<input id="telefone" type="text" value="" required>
-</div>
-
-</div>
-
-
-<div class="linha">
-
-<div class="campo">
-<label>Detalhes</label>
-<textarea id="detalhes"> </textarea>
-</div>
-
-
-<div class="campo foto">
-<label>Foto</label>
-
-<input id="foto" type="file">
-
-<div class="avatar">
-<img id="previewFoto" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
-</div>
-
-</div>
-
-</div>
-
-
-<div class="botoes">
-
-<button type="submit" class="salvar">Salvar alterações</button>
-<button type="button" id="cancelarEditar" class="cancelar">Cancelar</button>
-
-</div>
-
-</form>
-
-</main>
-
-
-<footer>
-© Todos os direitos reservados
-</footer>
-
-</body>
-<script src="../js/editarFuncionario.js"></script>
+    <script src="../js/authGuard.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/editarFuncionario.js"></script>
+  </body>
 </html>

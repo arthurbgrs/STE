@@ -231,6 +231,11 @@ background:#fff3cf;
 color:#d89200;
 }
 
+.treinamento-icone.finalizado{
+background:#ddf8e5;
+color:#17803d;
+}
+
 .treinamento-status{
 display:inline-flex;
 align-items:center;
@@ -250,6 +255,46 @@ color:#ff5c5c;
 .treinamento-status.pendente{
 background:#fff3cf;
 color:#d89200;
+}
+
+.treinamento-status.finalizado{
+background:#ddf8e5;
+color:#17803d;
+}
+
+.acao-treinamento{
+white-space:nowrap;
+}
+
+.botao-finalizar{
+border:none;
+background:#34155f;
+color:#ffffff;
+padding:10px 14px;
+border-radius:999px;
+font-size:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+.botao-finalizar:hover{
+background:#4a237f;
+}
+
+.botao-finalizar:disabled{
+opacity:0.65;
+cursor:wait;
+}
+
+.acao-finalizada{
+font-size:13px;
+font-weight:700;
+color:#17803d;
+}
+
+.acao-sem-permissao{
+font-size:13px;
+color:#8a829c;
 }
 
 .rodape-conteudo{
@@ -273,14 +318,6 @@ box-shadow:0 8px 20px rgba(67, 31, 117, 0.08);
 .resumo-treinamentos{
 color:#7c738f;
 font-size:14px;
-}
-
-footer{
-background:#34155f;
-color:white;
-text-align:center;
-padding:18px;
-margin-top:auto;
 }
 
 @media (max-width: 760px){

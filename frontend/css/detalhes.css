@@ -207,15 +207,6 @@ body {
   border: 1px solid #f0c2bc;
 }
 
-.footer {
-  background: #34155f;
-  color: #ffffff;
-  text-align: center;
-  padding: 16px;
-  font-size: 0.9rem;
-  margin-top: auto;
-}
-
 @media (max-width: 768px) {
   .header {
     justify-content: center;

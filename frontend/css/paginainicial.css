@@ -2,11 +2,18 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #fcfbff;
   color: #27134d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -34,6 +41,20 @@ a {
   gap: 36px;
 }
 
+.logout-button {
+  border: none;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: #39106a;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.logout-button:hover {
+  background: #4b1c90;
+}
+
 .menu a {
   color: #7a6f92;
   font-size: 1rem;
@@ -48,6 +69,7 @@ a {
   max-width: 1240px;
   margin: 0 auto;
   padding: 56px 22px 72px;
+  flex: 1;
 }
 
 .boas-vindas {
@@ -144,6 +166,103 @@ a {
   display: grid;
   grid-template-columns: 360px minmax(0, 1fr);
   gap: 40px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.treinamentos-aviso {
+  padding: 28px 24px;
+  background: #ffffff;
+  border: 1px solid #ece7f7;
+  border-radius: 24px;
+  color: #483677;
+  margin-bottom: 24px;
+  min-height: 108px;
+  display: flex;
+  align-items: center;
+}
+
+.treinamentos-aviso p {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.treinamentos-lista {
+  display: grid;
+  gap: 14px;
+}
+
+.treinamento-item {
+  background: #ffffff;
+  border: 1px solid #ece7f7;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 8px 24px rgba(72, 29, 120, 0.06);
+}
+
+.treinamento-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: #31155d;
+}
+
+.treinamento-item p {
+  margin: 0;
+  color: #7f7294;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.treinamento-item .treinamento-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  margin: 14px 0 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.treinamento-item .treinamento-status.pendente {
+  background: #fff3cf;
+  color: #d89200;
+}
+
+.treinamento-item .treinamento-status.vencido {
+  background: #ffe7e4;
+  color: #ff5c5c;
+}
+
+.treinamento-item .treinamento-status.finalizado {
+  background: #ddf8e5;
+  color: #17803d;
+}
+
+.treinamento-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.treinamento-acoes button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #34155f;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.treinamento-acoes button:disabled {
+  opacity: 0.65;
+  cursor: wait;
 }
 
 .titulo-secao {

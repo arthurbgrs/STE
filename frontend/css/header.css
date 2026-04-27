@@ -1,0 +1,60 @@
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 54px;
+  border-bottom: 1px solid #ece7f7;
+  background: #ffffff;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #33155f;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 36px;
+}
+
+.menu a {
+  color: #7a6f92;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.menu a.ativo {
+  color: #341560;
+  font-weight: 700;
+}
+
+.logout-button {
+  border: none;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: #39106a;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.logout-button:hover {
+  background: #4b1c90;
+}
+
+@media (max-width: 960px) {
+  .topo {
+    padding: 18px 22px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .menu {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

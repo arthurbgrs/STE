@@ -22,7 +22,7 @@ document.getElementById('formCadastro').addEventListener('submit', async (e) => 
 
     if (response.ok) {
       alert('Usuário cadastrado com sucesso!');
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     } else {
       const error = await response.json();
       document.getElementById('mensagem').textContent = error.mensagem || 'Erro no cadastro';

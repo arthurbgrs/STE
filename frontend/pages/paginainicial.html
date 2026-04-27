@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Painel</title>
     <link rel="stylesheet" href="../css/paginainicial.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
   </head>
   <body>
     <header class="topo">
       <a class="logo" href="/frontend/pages/paginainicial.html">STE</a>
 
-      <nav class="menu">
+      <nav id="adminMenu" class="menu">
         <a class="ativo" href="/frontend/pages/paginainicial.html">Home</a>
         <a href="/frontend/pages/gerenciarFuncionario.html">Funcionários</a>
         <a href="/frontend/pages/adicionarTreinamento.html">Treinamentos</a>
       </nav>
+
+      <button id="logoutButton" class="logout-button" type="button">Sair</button>
     </header>
 
     <main class="pagina">
@@ -23,10 +26,10 @@
         <h1 id="saudacao-usuario">Olá!</h1>
       </section>
 
-      <section class="resumo">
+      <section id="adminResumo" class="resumo">
         <article class="resumo-card resumo-card-destaque">
           <div class="icone-resumo" aria-hidden="true">
-            <span>p</span>
+            <span id="inicial-usuario">P</span>
           </div>
           <p id="quantidade" class="resumo-numero">0</p>
           <p class="resumo-legenda">Funcionários ativos</p>
@@ -42,12 +45,12 @@
       </section>
 
       <section class="conteudo-principal">
-        <section class="bloco">
+        <section id="adminActionsSection" class="bloco">
           <h2 class="titulo-secao">Ações rápidas</h2>
 
           <div class="acoes-rapidas">
             <a class="acao-card" href="/frontend/pages/gerenciarFuncionario.html">
-              <span class="acao-icone" aria-hidden="true">p</span>
+              <span id="inicial-gerenciar-funcionarios" class="acao-icone" aria-hidden="true">P</span>
               <span class="acao-texto">Gerenciar funcionários</span>
               <span class="acao-seta" aria-hidden="true">›</span>
             </a>
@@ -72,9 +75,15 @@
           </div>
         </section>
 
-        <section class="bloco">
+        <section id="adminEmployeesSection" class="bloco">
           <h2 class="titulo-secao">Funcionários ativos</h2>
           <ul class="lista-recentes"></ul>
+        </section>
+
+        <section id="funcionarioTreinamentosSection" class="bloco full-width hidden">
+          <h2 class="titulo-secao">Meus treinamentos</h2>
+          <div id="treinamentosAviso" class="treinamentos-aviso"></div>
+          <div id="treinamentosLista" class="treinamentos-lista"></div>
         </section>
       </section>
     </main>
@@ -97,6 +106,8 @@
         </div>
       </div>
     </div>
+
+    <footer class="site-footer">© 2026 Todos os direitos reservados</footer>
 
     <script src="../js/index.js"></script>
   </body>

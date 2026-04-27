@@ -6,41 +6,20 @@
 
     <link rel="stylesheet" href="../css/cadastro.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
       <div class="card">
         <div class="form-area">
-          <h1>CADASTRO DE USU√ÅRIO</h1>
-
-          <form id="formCadastro">
-            <input
-              type="text"
-              id="nome"
-              placeholder="Digite seu nome"
-              required
-              class="arvo-regular"
-            />
-
-            <input type="email" id="email" placeholder="Email" required class="arvo-regular"/>
-
-            <input type="password" id="senha" placeholder="Senha" required class="arvo-regular" />
-
-            <input
-              type="password"
-              id="confirmarSenha"
-              placeholder="Confirmar senha"
-              required
-                class="arvo-regular"
-            />
-
-            <button type="submit" class="arvo-regular enviar">Cadastrar</button>
-          </form>
-
-          <p id="mensagem"></p>
+          <h1>Cadastro somente por administrador</h1>
+          <p>
+            O registro de funcion·rios deve ser realizado pelo administrador do sistema.
+            Entre em contato com o respons·vel ou faÁa login com sua conta.
+          </p>
+          <a href="../index.html"><button type="button" class="arvo-regular enviar">Voltar ao login</button></a>
         </div>
 
         <div class="image-area">
@@ -48,7 +27,5 @@
         </div>
       </div>
     </div>
-
-    <script src="../js/cadastro.js"></script>
   </body>
 </html>
